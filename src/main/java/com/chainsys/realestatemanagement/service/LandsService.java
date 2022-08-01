@@ -14,16 +14,16 @@ public class LandsService {
 @Autowired
 private LandsRepository landobj;
 
-public List<Lands> getlands()
+public List<Lands> getland()
 {
 	List<Lands>listland=landobj.findAll();
 	return listland;
 }
 @Transactional
 
-	public Lands save(Lands dr)
+	public Lands save(Lands land)
 	{
-	return landobj.save(dr);
+	return landobj.save(land);
 	}
 public Lands findById(int id)
 {

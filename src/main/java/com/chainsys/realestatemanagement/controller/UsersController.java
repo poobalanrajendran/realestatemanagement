@@ -18,7 +18,7 @@ import com.chainsys.realestatemanagement.service.UserService;
 @RequestMapping("/users")
 public class UsersController {
 	@Autowired
-	UserService usservice;
+	UserService userservice;
 
 	@GetMapping("/usersform")
 	public String showAddForm(Model model) {
@@ -29,39 +29,41 @@ public class UsersController {
 
 	@PostMapping("addusers")
 
-	public String addNewUsers(@ModelAttribute("adduser") Users theuser) {
-		usservice.save(theuser);
+	public String addNewUser(@ModelAttribute("adduser") Users theuser) {
+		userservice.save(theuser);
 		return "redirect:/users/userslist";
 	}
 
 	@GetMapping("/updateform")
-    public String showUpdateForm(@RequestParam("userid") int id,Model model)
-    {
-        Users userdet=usservice.findById(id);
-        model.addAttribute("updateuser", userdet);
-        return "update-users-form";
-    }
-    @PostMapping("/updateuser")
-    public String updateuser(@ModelAttribute("updateuser") Users userid) {
-        usservice.save(userid);
-        return "redirect:/users/userslist";
-    }
+	public String showUpdateForm(@RequestParam("userid") int id, Model model) {
+		Users userupdate = userservice.findById(id);
+		model.addAttribute("updateuser", userupdate);
+		return "update-users-form";
+	}
+
+	@PostMapping("/updateuser")
+	public String updateuser(@ModelAttribute("updateuser") Users userid) {
+		userservice.save(userid);
+		return "redirect:/users/userslist";
+	}
 
 	@GetMapping("/deleteusers")
-	public String deleteusers(@RequestParam("users_id") int id) {
-		usservice.deleteById(id);
+	public String deleteuser(@RequestParam("userid") int id) {
+		userservice.deleteById(id);
 		return "redirect:/users/userslist ";
 	}
 
-  @GetMapping("/findusersbyid") public String
-  findusersById(@RequestParam("userid")int id,Model model) { Users
-  theuser=usservice.findById(id); model.addAttribute("finduserid",theuser);
-  return "find-user-id-form"; }
+	@GetMapping("/findusersbyid")
+	public String finduserById(@RequestParam("userid") int id, Model model) {
+		Users theuser = userservice.findById(id);
+		model.addAttribute("finduserid", theuser);
+		return "find-user-id-form";
+	}
 
 	@GetMapping("/userslist")
 
-	public String getAllusers(Model model) {
-		List<Users> userlist = usservice.getUserss();
+	public String getAlluser(Model model) {
+		List<Users> userlist = userservice.getuser();
 		model.addAttribute("allusers", userlist);
 		return "list-users";
 	}

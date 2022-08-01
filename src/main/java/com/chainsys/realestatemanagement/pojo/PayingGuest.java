@@ -2,89 +2,126 @@ package com.chainsys.realestatemanagement.pojo;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 @Entity
+@Table(name="PayingGuest")
 public class PayingGuest {
 
 @Id
+@Column(name="pg_id")
 			private	int pg_id ;
-			private int owner_id;
-			private int	pg_location;
-			private long pg_phoneno ;
-			private	String pg_address ;
-			private double	pg_rent ;
-			private	String pg_foodfacility ;
-			private	String pg_AC_nonAC ;
-			private	String pg_image ;
-			private	String pg_status ;
-			private Date dates;
-			
-			public int getPg_id() {
-				return pg_id;
-			}
-			public void setPg_id(int pg_id) {
-				this.pg_id = pg_id;
-			}
-			public int getOwner_id() {
-				return owner_id;
-			}
-			public void setOwner_id(int owner_id) {
-				this.owner_id = owner_id;
-			}
-			public int getPg_location() {
-				return pg_location;
-			}
-			public void setPg_location(int pg_location) {
-				this.pg_location = pg_location;
-			}
-			public long getPg_phoneno() {
-				return pg_phoneno;
-			}
-			public void setPg_phoneno(int pg_phoneno) {
-				this.pg_phoneno = pg_phoneno;
-			}
-			public String getPg_address() {
-				return pg_address;
-			}
-			public void setPg_address(String pg_address) {
-				this.pg_address = pg_address;
-			}
-			public double getPg_rent() {
-				return pg_rent;
-			}
-			public void setPg_rent(int pg_rent) {
-				this.pg_rent = pg_rent;
-			}
-			public String getPg_foodfacility() {
-				return pg_foodfacility;
-			}
-			public void setPg_foodfacility(String pg_foodfacility) {
-				this.pg_foodfacility = pg_foodfacility;
-			}
-			public String getPg_AC_nonAC() {
-				return pg_AC_nonAC;
-			}
-			public void setPg_AC_nonAC(String pg_AC_nonAC) {
-				this.pg_AC_nonAC = pg_AC_nonAC;
-			}
-			public String getPg_image() {
-				return pg_image;
-			}
-			public void setPg_image(String pg_image) {
-				this.pg_image = pg_image;
-			}
-			public String getPg_status() {
-				return pg_status;
-			}
-			public void setPg_status(String pg_status) {
-				this.pg_status = pg_status;
-			}
-			public Date getDates() {
-				return dates;
-			}
-			public void setDates(Date dates) {
-				this.dates = dates;
-			}
+
+@Column(name="owner_id")
+private int ownerId;
+
+@Column(name="pg_location")
+private int	pgLocation;
+
+@Column(name="pg_phoneno")
+private long pgPhoneno ;
+
+@Column(name="pg_address")
+private	String pgAddress ;
+
+@Column(name="pg_rent")
+private double	pgRent ;
+
+@Column(name="pg_foodfacility")
+private	String pgfoodFacility ;
+
+@Column(name="pg_AC_nonAC")
+private	String pgacNonac ;
+//private	String pg_image ;
+@Column(name="pg_status")
+private	String pgStatus ;
+
+@Column(name="dates")
+private Date dates;
+
+
+public int getPg_id() {
+	return pg_id;
+}
+
+public void setPg_id(int pg_id) {
+	this.pg_id = pg_id;
+}
+
+public int getOwnerId() {
+	return ownerId;
+}
+
+public void setOwnerId(int ownerId) {
+	this.ownerId = ownerId;
+}
+
+public int getPgLocation() {
+	return pgLocation;
+}
+
+public void setPgLocation(int pgLocation) {
+	this.pgLocation = pgLocation;
+}
+
+public long getPgPhoneno() {
+	return pgPhoneno;
+}
+
+public void setPgPhoneno(long pgPhoneno) {
+	this.pgPhoneno = pgPhoneno;
+}
+
+public String getPgAddress() {
+	return pgAddress;
+}
+
+public void setPgAddress(String pgAddress) {
+	this.pgAddress = pgAddress;
+}
+
+public double getPgRent() {
+	return pgRent;
+}
+
+public void setPgRent(double pgRent) {
+	this.pgRent = pgRent;
+}
+
+public String getPgfoodFacility() {
+	return pgfoodFacility;
+}
+
+public void setPgfoodFacility(String pgfoodFacility) {
+	this.pgfoodFacility = pgfoodFacility;
+}
+
+public String getPgacNonac() {
+	return pgacNonac;
+}
+
+public void setPgacNonac(String pgacNonac) {
+	this.pgacNonac = pgacNonac;
+}
+
+public String getPgStatus() {
+	return pgStatus;
+}
+
+public void setPgStatus(String pgStatus) {
+	this.pgStatus = pgStatus;
+}
+
+public Date getDates() {
+	return dates;
+}
+
+public void setDates(Date dates) {
+	this.dates = dates;
+}
+
+
 			
 }

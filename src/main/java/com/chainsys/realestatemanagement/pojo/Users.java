@@ -1,76 +1,117 @@
 package com.chainsys.realestatemanagement.pojo;
 
-import java.util.Date;
 
+import java.sql.Date;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 @Entity
+@Table(name="Users")
 public class Users {
 	@Id
-	private int users_id;
-	private String users_name ;
+	@Column(name="users_id")
+	private int usersId;
+	
+	@Column(name="users_name")
+	private String usersName ;
+	
+	@Column(name="passwords")
 	private String passwords ;
+	
+	@Column(name="roles")
 	private String roles ;
-	private String gender;  
-	private String email_id ;
+	
+	@Column(name="gender")
+	private String gender;
+	
+	@Column(name="email_id")
+	private String emailId ;
+	
+	@Column(name="address")
 	private String address ;
-	private long phone_no; 
+	
+	@Column(name="phone_no")
+	private long phoneno;
+	
+	@Column(name="dates")
 	private Date dates;
 	
-	public int getUsers_id() {
-		return users_id;
+	
+	public int getUsersId() {
+		return usersId;
 	}
-	public void setUsers_id(int users_id) {
-		this.users_id = users_id;
+
+	public void setUsersId(int usersId) {
+		this.usersId = usersId;
 	}
-	public String getUsers_name() {
-		return users_name;
+
+	public String getUsersName() {
+		return usersName;
 	}
-	public void setUsers_name(String users_name) {
-		this.users_name = users_name;
+
+	public void setUsersName(String usersName) {
+		this.usersName = usersName;
 	}
+
 	public String getPasswords() {
 		return passwords;
 	}
+
 	public void setPasswords(String passwords) {
 		this.passwords = passwords;
 	}
+
 	public String getRoles() {
 		return roles;
 	}
+
 	public void setRoles(String roles) {
 		this.roles = roles;
 	}
-	
-	public String getEmail_id() {
-		return email_id;
-	}
-	public void setEmail_id(String email_id) {
-		this.email_id = email_id;
-	}
-	public String getAddress() {
-		return address;
-	}
-	public void setAddress(String address) {
-		this.address = address;
-	}
-	public long getPhone_no() {
-		return phone_no;
-	}
-	public void setPhone_no(long phone_no) {
-		this.phone_no = phone_no;
-	}
-	public Date getDates() {
-		return dates;
-	}
-	public void setDates(Date dates) {
-		this.dates = dates;
-	}
+
 	public String getGender() {
 		return gender;
 	}
+
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
+
+	public String getEmailId() {
+		return emailId;
+	}
+
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public long getPhoneno() {
+		return phoneno;
+	}
+
+	public void setPhoneno(long phoneno) {
+		this.phoneno = phoneno;
+	}
+
+	public Date getDates() {
+		return dates;
+	}
+
+	public void setDates(Date dates) {
+		this.dates = dates;
+	}
+
+	
+	
 	
 }

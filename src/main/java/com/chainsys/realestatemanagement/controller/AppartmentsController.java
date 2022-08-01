@@ -18,7 +18,7 @@ import com.chainsys.realestatemanagement.service.AppartmentsService;
 @RequestMapping("/appartments")
 public class AppartmentsController {
 	@Autowired
-	AppartmentsService appartservice;
+	AppartmentsService appartmentsservice;
 	@GetMapping("/appartmentsform")
 	public String showAddform(Model model)
 	{
@@ -29,7 +29,7 @@ public class AppartmentsController {
 	@PostMapping("addappart")
 	public String addNewappart(@ModelAttribute("addapparts") Appartments theappart)
 	{
-	appartservice.save(theappart);
+		appartmentsservice.save(theappart);
 	return "redirect:/appartments/appartmentslist";
 }
 //@GetMapping("/updateform")
@@ -60,7 +60,7 @@ public class AppartmentsController {
 //}
 @GetMapping("/appartmentslist")
 public String getAllusers(Model model) {
-	List<Appartments>appartlist=appartservice.getappart();
+	List<Appartments>appartlist=appartmentsservice.getappart();
 	model.addAttribute("allapparts", appartlist);
 	return "list-appart";
 }

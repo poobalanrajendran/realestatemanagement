@@ -2,122 +2,181 @@ package com.chainsys.realestatemanagement.pojo;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 @Entity
 public class Appartments {
 	@Id
-	private int app_id ;
-	private int owner_id ;
-	private int app_locations  ;
-	private int app_length ;
-	private int app_breadth ;
-	private int app_squarefeet ;
-	private int app_surveyno  ;
-	private int app_pattano  ;
-	private long appcontact ;
-	private String app_status  ;
-	private double app_price ;
-	private String app_lift  ;
-	private String app_floor ;
-	private String app_address  ;
+	
+	@Column(name="app_id")
+	private int appId ;
+	
+	@Column(name="owner_id")
+	private int ownerId ;
+	
+	@Column(name="app_locations")
+	private int appLocations  ;
+	
+	@Column(name="app_length")
+	private int appLength ;
+	
+	@Column(name="app_breadth")
+	private int appBreadth ;
+	
+	@Column(name="app_squarefeet")
+	private int appsquareFeet ;
+	
+	@Column(name="app_surveyno")
+	private int appSurveyno  ;
+	
+	@Column(name="app_pattano")
+	private int appPattano  ;
+	
+	@Column(name="appcontact")
+	private long appContact ;
+	
+	@Column(name="app_status")
+	private String appStatus  ;
+	
+	@Column(name="app_price")
+	private double appPrice ;
+	
+	@Column(name="app_lift")
+	private String appLift  ;
+	
+	@Column(name="app_floor")
+	private String appFloor ;
+	
+	@Column(name="app_address")
+	private String appAddress  ;
+	
 	//private String app_image  ;
+	
+	@Column(name="dates")
 	private Date dates;
-	public int getApp_id() {
-		return app_id;
+	
+	
+	
+	public int getAppId() {
+		return appId;
 	}
-	public void setApp_id(int app_id) {
-		this.app_id = app_id;
+
+	public void setAppId(int appId) {
+		this.appId = appId;
 	}
-	public int getOwner_id() {
-		return owner_id;
+
+	public int getOwnerId() {
+		return ownerId;
 	}
-	public void setOwner_id(int owner_id) {
-		this.owner_id = owner_id;
+
+	public void setOwnerId(int ownerId) {
+		this.ownerId = ownerId;
 	}
-	public int getApp_locations() {
-		return app_locations;
+
+	public int getAppLocations() {
+		return appLocations;
 	}
-	public void setApp_locations(int app_locations) {
-		this.app_locations = app_locations;
+
+	public void setAppLocations(int appLocations) {
+		this.appLocations = appLocations;
 	}
-	public int getApp_length() {
-		return app_length;
+
+	public int getAppLength() {
+		return appLength;
 	}
-	public void setApp_length(int app_length) {
-		this.app_length = app_length;
+
+	public void setAppLength(int appLength) {
+		this.appLength = appLength;
 	}
-	public int getApp_breadth() {
-		return app_breadth;
+
+	public int getAppBreadth() {
+		return appBreadth;
 	}
-	public void setApp_breadth(int app_breadth) {
-		this.app_breadth = app_breadth;
+
+	public void setAppBreadth(int appBreadth) {
+		this.appBreadth = appBreadth;
 	}
-	public int getApp_squarefeet() {
-		return app_squarefeet;
+
+	public int getAppsquareFeet() {
+		return appsquareFeet;
 	}
-	public void setApp_squarefeet(int app_squarefeet) {
-		this.app_squarefeet = app_squarefeet;
+
+	public void setAppsquareFeet(int appsquareFeet) {
+		this.appsquareFeet = appsquareFeet;
 	}
-	public int getApp_surveyno() {
-		return app_surveyno;
+
+	public int getAppSurveyno() {
+		return appSurveyno;
 	}
-	public void setApp_surveyno(int app_surveyno) {
-		this.app_surveyno = app_surveyno;
+
+	public void setAppSurveyno(int appSurveyno) {
+		this.appSurveyno = appSurveyno;
 	}
-	public int getApp_pattano() {
-		return app_pattano;
+
+	public int getAppPattano() {
+		return appPattano;
 	}
-	public void setApp_pattano(int app_pattano) {
-		this.app_pattano = app_pattano;
+
+	public void setAppPattano(int appPattano) {
+		this.appPattano = appPattano;
 	}
-	public long getAppcontact() {
-		return appcontact;
+
+	public long getAppContact() {
+		return appContact;
 	}
-	public void setAppcontact(long appcontact) {
-		this.appcontact = appcontact;
+
+	public void setAppContact(long appContact) {
+		this.appContact = appContact;
 	}
-	public String getApp_status() {
-		return app_status;
+
+	public String getAppStatus() {
+		return appStatus;
 	}
-	public void setApp_status(String app_status) {
-		this.app_status = app_status;
+
+	public void setAppStatus(String appStatus) {
+		this.appStatus = appStatus;
 	}
-	public double getApp_price() {
-		return app_price;
+
+	public double getAppPrice() {
+		return appPrice;
 	}
-	public void setApp_price(double app_price) {
-		this.app_price = app_price;
+
+	public void setAppPrice(double appPrice) {
+		this.appPrice = appPrice;
 	}
-	public String getApp_lift() {
-		return app_lift;
+
+	public String getAppLift() {
+		return appLift;
 	}
-	public void setApp_lift(String app_lift) {
-		this.app_lift = app_lift;
+
+	public void setAppLift(String appLift) {
+		this.appLift = appLift;
 	}
-	public String getApp_floor() {
-		return app_floor;
+
+	public String getAppFloor() {
+		return appFloor;
 	}
-	public void setApp_floor(String app_floor) {
-		this.app_floor = app_floor;
+
+	public void setAppFloor(String appFloor) {
+		this.appFloor = appFloor;
 	}
-	public String getApp_address() {
-		return app_address;
+
+	public String getAppAddress() {
+		return appAddress;
 	}
-	public void setApp_address(String app_address) {
-		this.app_address = app_address;
+
+	public void setAppAddress(String appAddress) {
+		this.appAddress = appAddress;
 	}
-//	public String getApp_image() {
-//		return app_image;
-//	}
-//	public void setApp_image(String app_image) {
-//		this.app_image = app_image;
-//	}
+
 	public Date getDates() {
 		return dates;
 	}
+
 	public void setDates(Date dates) {
 		this.dates = dates;
 	}
+
 	
-}
+	}

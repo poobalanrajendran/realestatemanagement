@@ -19,7 +19,7 @@ import com.chainsys.realestatemanagement.service.LandsService;
 @RequestMapping("/lands")
 public class LandsController {
 	@Autowired
-	LandsService lanservice;
+	LandsService landsservice;
 	
 	@GetMapping("/landsform")
 	public String showAddForm(Model model)
@@ -30,39 +30,39 @@ public class LandsController {
 	}
 @PostMapping("addlands")
 
-public String addNewLands(@ModelAttribute("addland") Lands theland)
+public String addNewLand(@ModelAttribute("addland") Lands theland)
 {
-	lanservice.save(theland);
+	landsservice.save(theland);
 	return "redirect:/lands/landlist";
 }
 @GetMapping("/updateform")
-public String updateLands(@RequestParam("id") int id, Model model) {
-	Lands theland = lanservice.findById(id);
+public String updateLand(@RequestParam("id") int id, Model model) {
+	Lands theland = landsservice.findById(id);
 	model.addAttribute("updateland", theland);
 	return "update-lands-form";
 }
 @PostMapping("updateland")
 public String updateland(@ModelAttribute("updateland") Lands theland) {
-	lanservice.save(theland);
+	landsservice.save(theland);
 	return "redirect:/lands/landlist";
 }
 @GetMapping("/deleteland")
 public String deleteland(@RequestParam("id") int id) {
-	lanservice.deleteById(id);
+	landsservice.deleteById(id);
 	return "redirect:/lands/landlist";
 }
 
 @GetMapping("/findusersbyid")
-public String findusersById(@RequestParam("landid")int id,Model model)
+public String finduserById(@RequestParam("landid")int id,Model model)
 {
-Lands theland=lanservice.findById(id);
+Lands theland=landsservice.findById(id);
 model.addAttribute("findlandid",theland);
 return "find-land-id-form"; }
 
 @GetMapping("/landlist")
 
-public String getAllusers(Model model) {
-	List<Lands> landlist = lanservice.getlands();
+public String getAlluser(Model model) {
+	List<Lands> landlist = landsservice.getland();
 	model.addAttribute("alllands", landlist);
 	return "list-land";
 }

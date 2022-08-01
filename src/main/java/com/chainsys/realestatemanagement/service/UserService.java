@@ -14,27 +14,27 @@ import com.chainsys.realestatemanagement.pojo.Users;
 public class UserService {
 
 	@Autowired
-	private UsersRepository userobj;
+	private UsersRepository userrepo;//
 	
-		public List<Users> getUserss()
+		public List<Users> getuser()
 		{
-			List<Users>listuser =userobj.findAll();
+			List<Users>listuser =userrepo.findAll();
 			return listuser;
 	}
 		//@Transactional
-	public Users save(Users dr)
+	public Users save(Users user)
 	{
-		return userobj.save(dr);
+		return userrepo.save(user);
 	}
 	public Users findById(int id)
 	{
-		return userobj.findById(id);
+		return userrepo.findById(id);
 	}
 	@Transactional
 
 	public void deleteById(int id)
 	{
-		userobj.deleteById(id);
+		userrepo.deleteById(id);
 	}
 	
 }

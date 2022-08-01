@@ -13,61 +13,70 @@
 <div id="form">
 <form:form action="" method="get" modelAttribute="finduserid">
 <div>
-       <label for="users_id">usersId</label>
+       <label for="usersId">users Id</label>
        <div >
-        <form:input path="users_id" readonly="true" />
+        <form:input path="usersId"  />
        </div>
       </div>
+      <br>
       <div>
-       <label for="users_name">usersName</label>
+       <label for="usersName">users Name</label>
        <div >
-        <form:input path="users_name" readonly="true" />
+        <form:input path="usersName"  />
        </div>
       </div>
+      <br>
       <div>
        <label for="passwords">passwords</label>
        <div >
-        <form:input path="passwords" readonly="true" />
+        <form:input path="passwords"  />
        </div>
       </div>
+      <br>
+      
       <div>
-       <label for="roles">roles</label>
+     
+       <label for="emailId">email Id</label>
        <div >
-        <form:input path="roles" readonly="true"  />
+        <form:input path="emailId"  />
        </div>
       </div>
+      <br>
+      
       <div>
-       <label for="email_id">emailid</label>
+       <label for="phoneno">phoneno</label>
        <div >
-        <form:input path="email_id" readonly="true" />
+        <form:input  path="phoneno"  />
        </div>
       </div>
-      <div>
-       <label for="address">address </label>
-       <div >
-        <form:input path="address" readonly="true" />
-       </div>
-      </div>
-      <div>
-       <label for="phone_no">phoneno</label>
-       <div >
-        <form:input path="phone_no" readonly="true"  />
-       </div>
-      </div>
+      <br>
       <div>
        <label for="Dates">dates</label>
        <div >
-        <form:input path="Dates" readonly="true" />
+        <form:input type ="date" path="Dates"  />
        </div>
       </div>
-      <div>
-       <label for="gender">genders</label>
+  <br>
+       <div>
+                Role : <form:radiobutton path="gender" value="Male" />Male
+                         <form:radiobutton path="gender" value="Female" />Female
+                         <form:radiobutton path="gender" value="Others" />Others
+                </div>
+                <br>
+                <div>
+       <label for="address">address </label>
        <div >
-        <form:input path="gender" readonly="true" />
+        <form:textarea path="address" cols="50" rows="6" />
        </div>
       </div>
+      <br>
+      <div>
+                Role : <form:radiobutton path="roles" value="User" />User
+                         <form:radiobutton path="roles" value="Admin" />Admin
+                </div>
+                
       
-<form:button>find</form:button>
+
 </div>
 </form:form>
 </div>

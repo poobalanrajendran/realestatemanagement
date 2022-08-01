@@ -13,64 +13,72 @@
 <div id="form">
 <form:form action="updateuser" method="post" modelAttribute="updateuser">
 <div>
-       <label for="users_id">usersId</label>
+       <label for="usersId">users Id</label>
        <div >
-        <form:input path="users_id"  />
+        <form:input path="usersId"  />
        </div>
       </div>
+      <br>
       <div>
-       <label for="users_name">usersName</label>
+       <label for="usersName">users Name</label>
        <div >
-        <form:input path="users_name"  />
+        <form:input path="usersName"  />
        </div>
       </div>
+      <br>
       <div>
        <label for="passwords">passwords</label>
        <div >
         <form:input path="passwords"  />
        </div>
       </div>
+      <br>
+      
       <div>
-       <label for="roles">roles</label>
+     
+       <label for="emailId">email Id</label>
        <div >
-        <form:input path="roles"  />
+        <form:input path="emailId"  />
        </div>
       </div>
+      <br>
+      
       <div>
-       <label for="email_id">emailid</label>
+       <label for="phoneno">phoneno</label>
        <div >
-        <form:input path="email_id"  />
+        <form:input  path="phoneno"  />
        </div>
       </div>
-      <div>
-       <label for="address">address </label>
-       <div >
-        <form:input path="address"  />
-       </div>
-      </div>
-      <div>
-       <label for="phone_no">phoneno</label>
-       <div >
-        <form:input path="phone_no"  />
-       </div>
-      </div>
+      <br>
       <div>
        <label for="Dates">dates</label>
        <div >
-        <form:input path="Dates"  />
+        <form:input type ="date" path="Dates"  />
        </div>
       </div>
-      <div>
-       <label for="gender">genders</label>
+  <br>
+       <div>
+                Role : <form:radiobutton path="gender" value="Male" />Male
+                         <form:radiobutton path="gender" value="Female" />Female
+                         <form:radiobutton path="gender" value="Others" />Others
+                </div>
+                <br>
+                <div>
+       <label for="address">address </label>
        <div >
-        <form:input path="gender"  />
+        <form:textarea path="address" cols="50" rows="6" />
        </div>
       </div>
+      <br>
       <div>
+                Role : <form:radiobutton path="roles" value="User" />User
+                         <form:radiobutton path="roles" value="Admin" />Admin
+                </div>
+                 <br>
+      
 <form:button>Add users</form:button>
 </div>
 </form:form>
-</div>
 </div>
 </body>
 </html>

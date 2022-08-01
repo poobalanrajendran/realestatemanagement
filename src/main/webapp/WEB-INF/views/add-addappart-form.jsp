@@ -73,9 +73,9 @@
        </div>
       </div>
        <div>
-       <label for="land_status">land_status</label>
+       <label for="app_status">land_status</label>
        <div >
-        <form:input path="land_status"/>
+        <form:input path="app_status"/>
        </div>
       </div>
        <div>
@@ -102,12 +102,7 @@
         <form:input path="app_address"/>
        </div>
       </div>
-      <div>
-       <label for="app_image">app_image</label>
-       <div >
-        <form:input path="app_image"/>
-       </div>
-      </div>
+      
        <div>
        <label for="dates">dates</label>
        <div >

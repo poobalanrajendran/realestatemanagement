@@ -2,6 +2,7 @@ package com.chainsys.realestatemanagement.pojo;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -11,112 +12,163 @@ import javax.persistence.Table;
 @Table(name="lands")
 public class Lands {
 	@Id
-	private int land_id ;
-
-	private int owner_id  ;
+	@Column(name="land_id")
+	private int landId ;
+	
+	@Column(name="owner_id")
+	private int ownerId  ;
+	
+	@Column(name="locations")
 	private String locations ;
-	private int land_length ;
-	private int land_breadth  ;
-	private int land_squarefeet ; 
-	private int land_surveyno ;
-	private int land_pattano ;
-	private String land_type ; 
-	private long contact_number ; 
-	private String land_address ;
-	private String land_status ;
+	
+	@Column(name="land_length")
+	private int landLength ;
+	
+	@Column(name="land_breadth")
+	private int landBreadth  ;
+	
+	@Column(name="land_squarefeet")
+	private int landSquarefeet ; 
+	
+	@Column(name="land_surveyno")
+	private int landSurveyno ;
+	
+	@Column(name="land_pattano")
+	private int landPattano ;
+	
+	@Column(name="land_type")
+	private String landType ; 
+	
+	@Column(name="contact_number")
+	private long contactNumber ;
+	
+	@Column(name="land_address")
+	private String landAddress ;
+	
+	@Column(name="land_status")
+	private String landStatus ;
 	//private String lands_image ;
-	private double price  ; 
+	
+	@Column(name="price")
+	private double price  ;
+	
+	@Column(name="dates")
 	private Date dates;
-	public int getLand_id() {
-		return land_id;
+	
+	
+
+	public int getLandId() {
+		return landId;
 	}
-	public void setLand_id(int land_id) {
-		this.land_id = land_id;
+
+	public void setLandId(int landId) {
+		this.landId = landId;
 	}
-	public int getOwner_id() {
-		return owner_id;
+
+	public int getOwnerId() {
+		return ownerId;
 	}
-	public void setOwner_id(int owner_id) {
-		this.owner_id = owner_id;
+
+	public void setOwnerId(int ownerId) {
+		this.ownerId = ownerId;
 	}
+
 	public String getLocations() {
 		return locations;
 	}
+
 	public void setLocations(String locations) {
 		this.locations = locations;
 	}
-	public int getLand_length() {
-		return land_length;
+
+	public int getLandLength() {
+		return landLength;
 	}
-	public void setLand_length(int land_length) {
-		this.land_length = land_length;
+
+	public void setLandLength(int landLength) {
+		this.landLength = landLength;
 	}
-	public int getLand_breadth() {
-		return land_breadth;
+
+	public int getLandBreadth() {
+		return landBreadth;
 	}
-	public void setLand_breadth(int land_breadth) {
-		this.land_breadth = land_breadth;
+
+	public void setLandBreadth(int landBreadth) {
+		this.landBreadth = landBreadth;
 	}
-	public int getLand_squarefeet() {
-		return land_squarefeet;
+
+	public int getLandSquarefeet() {
+		return landSquarefeet;
 	}
-	public void setLand_squarefeet(int land_squarefeet) {
-		this.land_squarefeet = land_squarefeet;
+
+	public void setLandSquarefeet(int landSquarefeet) {
+		this.landSquarefeet = landSquarefeet;
 	}
-	public int getLand_surveyno() {
-		return land_surveyno;
+
+	public int getLandSurveyno() {
+		return landSurveyno;
 	}
-	public void setLand_surveyno(int land_surveyno) {
-		this.land_surveyno = land_surveyno;
+
+	public void setLandSurveyno(int landSurveyno) {
+		this.landSurveyno = landSurveyno;
 	}
-	public int getLand_pattano() {
-		return land_pattano;
+
+	public int getLandPattano() {
+		return landPattano;
 	}
-	public void setLand_pattano(int land_pattano) {
-		this.land_pattano = land_pattano;
+
+	public void setLandPattano(int landPattano) {
+		this.landPattano = landPattano;
 	}
-	public String getLand_type() {
-		return land_type;
+
+	public String getLandType() {
+		return landType;
 	}
-	public void setLand_type(String land_type) {
-		this.land_type = land_type;
+
+	public void setLandType(String landType) {
+		this.landType = landType;
 	}
-	public long getContact_number() {
-		return contact_number;
+
+	public long getContactNumber() {
+		return contactNumber;
 	}
-	public void setContact_number(long contact_number) {
-		this.contact_number = contact_number;
+
+	public void setContactNumber(long contactNumber) {
+		this.contactNumber = contactNumber;
 	}
-	public String getLand_address() {
-		return land_address;
+
+	public String getLandAddress() {
+		return landAddress;
 	}
-	public void setLand_address(String land_address) {
-		this.land_address = land_address;
+
+	public void setLandAddress(String landAddress) {
+		this.landAddress = landAddress;
 	}
-	public String getLand_status() {
-		return land_status;
+
+	public String getLandStatus() {
+		return landStatus;
 	}
-	public void setLand_status(String land_status) {
-		this.land_status = land_status;
+
+	public void setLandStatus(String landStatus) {
+		this.landStatus = landStatus;
 	}
-//	public String getLands_image() {
-//		return lands_image;
-//	}
-//	public void setLands_image(String lands_image) {
-//		this.lands_image = lands_image;
-//	}
+
 	public double getPrice() {
 		return price;
 	}
+
 	public void setPrice(double price) {
 		this.price = price;
 	}
+
 	public Date getDates() {
 		return dates;
 	}
+
 	public void setDates(Date dates) {
 		this.dates = dates;
 	}
+
 	
 	
 
