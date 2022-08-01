@@ -1,9 +1,18 @@
-package com.chainsys.finalproject.pojo;
+package com.chainsys.realestatemanagement.pojo;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+//import javax.persistence.OneToMany;
+//import javax.persistence.ManyToOne;
+@Entity
+@Table(name="lands")
 public class Lands {
+	@Id
 	private int land_id ;
+
 	private int owner_id  ;
 	private String locations ;
 	private int land_length ;
@@ -15,7 +24,7 @@ public class Lands {
 	private long contact_number ; 
 	private String land_address ;
 	private String land_status ;
-	private String lands_image ;
+	//private String lands_image ;
 	private double price  ; 
 	private Date dates;
 	public int getLand_id() {
@@ -90,12 +99,12 @@ public class Lands {
 	public void setLand_status(String land_status) {
 		this.land_status = land_status;
 	}
-	public String getLands_image() {
-		return lands_image;
-	}
-	public void setLands_image(String lands_image) {
-		this.lands_image = lands_image;
-	}
+//	public String getLands_image() {
+//		return lands_image;
+//	}
+//	public void setLands_image(String lands_image) {
+//		this.lands_image = lands_image;
+//	}
 	public double getPrice() {
 		return price;
 	}

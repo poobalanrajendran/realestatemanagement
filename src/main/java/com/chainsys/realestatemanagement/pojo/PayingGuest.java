@@ -1,10 +1,13 @@
-package com.chainsys.finalproject.pojo;
+package com.chainsys.realestatemanagement.pojo;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+@Entity
 public class PayingGuest {
 
-	
+@Id
 			private	int pg_id ;
 			private int owner_id;
 			private int	pg_location;
@@ -35,7 +38,7 @@ public class PayingGuest {
 			public void setPg_location(int pg_location) {
 				this.pg_location = pg_location;
 			}
-			public int getPg_phoneno() {
+			public long getPg_phoneno() {
 				return pg_phoneno;
 			}
 			public void setPg_phoneno(int pg_phoneno) {
@@ -47,7 +50,7 @@ public class PayingGuest {
 			public void setPg_address(String pg_address) {
 				this.pg_address = pg_address;
 			}
-			public int getPg_rent() {
+			public double getPg_rent() {
 				return pg_rent;
 			}
 			public void setPg_rent(int pg_rent) {

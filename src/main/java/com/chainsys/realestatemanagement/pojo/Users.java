@@ -1,13 +1,17 @@
-package com.chainsys.finalproject.pojo;
+package com.chainsys.realestatemanagement.pojo;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+@Entity
 public class Users {
+	@Id
 	private int users_id;
 	private String users_name ;
 	private String passwords ;
 	private String roles ;
-	private String male; 
+	private String gender;  
 	private String email_id ;
 	private String address ;
 	private long phone_no; 
@@ -37,12 +41,7 @@ public class Users {
 	public void setRoles(String roles) {
 		this.roles = roles;
 	}
-	public String getMale() {
-		return male;
-	}
-	public void setMale(String male) {
-		this.male = male;
-	}
+	
 	public String getEmail_id() {
 		return email_id;
 	}
@@ -66,6 +65,12 @@ public class Users {
 	}
 	public void setDates(Date dates) {
 		this.dates = dates;
+	}
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 	
 }

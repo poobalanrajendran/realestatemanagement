@@ -4,7 +4,7 @@
   <artifactId>FinalProject</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
-   <name>finalproject</name>
+   <name>realestatemanagement</name>
     <description>real estate management</description>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -58,17 +58,7 @@
   
   <build>
     <plugins>
-      <plugin>
-        <artifactId>maven-war-plugin</artifactId>
-        <version>3.2.3</version>
-      </plugin>
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.8.1</version>
-        <configuration>
-          <release>16</release>
-        </configuration>
-      </plugin>
+      
        <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>

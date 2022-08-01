@@ -1,15 +1,16 @@
-package com.chainsys.finalproject.service;
+package com.chainsys.realestatemanagement.service;
 
 import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.chainsys.finalproject.dao.UsersRepository;
-import com.chainsys.finalproject.pojo.Users;
+import com.chainsys.realestatemanagement.dao.UsersRepository;
+import com.chainsys.realestatemanagement.pojo.Users;
 
-
+@Service
 public class UserService {
 
 	@Autowired
@@ -20,7 +21,7 @@ public class UserService {
 			List<Users>listuser =userobj.findAll();
 			return listuser;
 	}
-		@Transactional
+		//@Transactional
 	public Users save(Users dr)
 	{
 		return userobj.save(dr);

@@ -1,9 +1,10 @@
-package com.chainsys.finalproject.dao;
+package com.chainsys.realestatemanagement.dao;
 
 import java.util.List;
 
-import com.chainsys.finalproject.pojo.Users;
 import org.springframework.data.repository.CrudRepository;
+
+import com.chainsys.realestatemanagement.pojo.Users;
 
 
 

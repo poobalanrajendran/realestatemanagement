@@ -1,8 +1,12 @@
-package com.chainsys.finalproject.pojo;
+package com.chainsys.realestatemanagement.pojo;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+@Entity
 public class Appartments {
+	@Id
 	private int app_id ;
 	private int owner_id ;
 	private int app_locations  ;
@@ -17,7 +21,7 @@ public class Appartments {
 	private String app_lift  ;
 	private String app_floor ;
 	private String app_address  ;
-	private String app_image  ;
+	//private String app_image  ;
 	private Date dates;
 	public int getApp_id() {
 		return app_id;
@@ -103,12 +107,12 @@ public class Appartments {
 	public void setApp_address(String app_address) {
 		this.app_address = app_address;
 	}
-	public String getApp_image() {
-		return app_image;
-	}
-	public void setApp_image(String app_image) {
-		this.app_image = app_image;
-	}
+//	public String getApp_image() {
+//		return app_image;
+//	}
+//	public void setApp_image(String app_image) {
+//		this.app_image = app_image;
+//	}
 	public Date getDates() {
 		return dates;
 	}
