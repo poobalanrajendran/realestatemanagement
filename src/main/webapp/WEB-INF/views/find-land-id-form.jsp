@@ -13,97 +13,105 @@
 <div id="form">
 <form:form action="" method="get" modelAttribute="findlandid">
 <div>
-       <label for="land_id">landId</label>
+       <label for="landId">landId</label>
        <div >
-        <form:input path="land_id" readonly="true" />
+        <form:input path="landId"/>
        </div>
       </div>
+      <br>
       <div>
-       <label for="owner_id">owner_id</label>
+       <label for="ownerId">ownerid</label>
        <div >
-        <form:input path="owner_id" readonly="true" />
+        <form:input path="ownerId"/>
        </div>
       </div>
+        <br>
       <div>
        <label for="locations">locations</label>
        <div >
-        <form:input path="locations" readonly="true" />
+        <form:input path="locations"/>
        </div>
       </div>
+        <br>
       <div>
-       <label for="land_length">roles</label>
+       <label for="landLength">landLength </label>
        <div >
-        <form:input path="land_length" readonly="true"  />
+        <form:input path="landLength"/>
        </div>
       </div>
+        <br>
       <div>
-       <label for="land_breadth">land_breadth</label>
+       <label for="landBreadth">landBreadth</label>
        <div >
-        <form:input path="land_breadth" readonly="true" />
+        <form:input path="landBreadth"/>
        </div>
       </div>
+        <br>
       <div>
-       <label for="land_squarefeet">land_squarefeet </label>
+       <label for="landSquarefeet">landSquarefeet </label>
        <div >
-        <form:input path="land_squarefeet" readonly="true" />
+        <form:input path="landSquarefeet"/>
        </div>
       </div>
+        <br>
       <div>
-       <label for="land_surveyno">land_surveyno</label>
+       <label for="landSurveyno">landSurveyno</label>
        <div >
-        <form:input path="land_surveyno" readonly="true"  />
+        <form:input path="landSurveyno"/>
        </div>
       </div>
+        <br>
       <div>
-       <label for="land_pattano">land_pattano</label>
+       <label for="landPattano">landPattano</label>
        <div >
-        <form:input path="land_pattano" readonly="true" />
+        <form:input path="landPattano"/>
        </div>
       </div>
+        <br>
       <div>
-       <label for="land_type">land_type</label>
+       <label for="contactNumber"> contactNumber</label>
        <div >
-        <form:input path="land_type" readonly="true" />
+        <form:input path="contactNumber"/>
        </div>
       </div>
+        <br>
       <div>
-       <label for="contact_number">contact_number</label>
+       <label for="landType">landType </label>
        <div >
-        <form:input path="contact_number" readonly="true" />
+        <form:input path="landType"/>
        </div>
       </div>
-      <div>
-       <label for="land_address">land_address</label>
+        <br>
+        <div>
+       <label for="landAddress">address </label>
        <div >
-        <form:input path="land_address" readonly="true" />
+        <form:textarea path="landAddress" cols="25" rows="6" />
        </div>
       </div>
+      <br>
       <div>
-       <label for="land_type">land_type</label>
-       <div >
-        <form:input path="land_type" readonly="true" />
-       </div>
-      </div>
-      <div>
-       <label for="land_status">land_status</label>
-       <div >
-        <form:input path="land_status" readonly="true" />
-       </div>
-      </div>
-      <div>
+               landStatus : <form:radiobutton path="landStatus" value="Sold" />Sold
+                         <form:radiobutton path="landStatus" value="Not Sold" />Not Sold
+                </div>
+     
+      <br>
+       <div>
        <label for="price">price</label>
        <div >
-        <form:input path="price" readonly="true" />
+        <form:input path="price"/>
        </div>
       </div>
-      <div>
-       <label for="dates">dates</label>
+        <br>
+     <div>
+       <label for="Dates">dates</label>
        <div >
-        <form:input path="dates" readonly="true" />
+        <form:input type ="date" path="Dates"  />
        </div>
       </div>
-      
-<form:button>find</form:button>
+        <br>
+      <div>
+       
+<form:button>AddLand</form:button>
 </div>
 </form:form>
 </div>

@@ -18,8 +18,10 @@ import com.chainsys.realestatemanagement.service.AppartmentsService;
 @RequestMapping("/appartments")
 public class AppartmentsController {
 	@Autowired
-	AppartmentsService appartmentsservice;
+	AppartmentsService appartmentsService;
+	
 	@GetMapping("/appartmentsform")
+	
 	public String showAddform(Model model)
 	{
 	Appartments theappart=new Appartments();
@@ -29,38 +31,38 @@ public class AppartmentsController {
 	@PostMapping("addappart")
 	public String addNewappart(@ModelAttribute("addapparts") Appartments theappart)
 	{
-		appartmentsservice.save(theappart);
+		appartmentsService.save(theappart);
 	return "redirect:/appartments/appartmentslist";
 }
-//@GetMapping("/updateform")
-//public String updateapparts(@RequestParam("id") int id, Model model)
-//{
-//	Appartments theappart=appartservice.findById(id);
-//	model.addAttribute("updateland",theappart);
-//	return "update-appartment-form";
-//}
-//@PostMapping("updateappart")
-//public String updateappart(@ModelAttribute("updateland") Appartments theappart)
-//{
-//	appartservice.save(theappart);
-//	return"redirect:/appartments/appartmentslist";
-//}
-//@GetMapping("/deleteland")
-//public String deleteapp(@RequestParam("id")int id)
-//{
-//	appartservice.deleteById(id);
-//	return "redirect:/appartments/appartmentslist";
-//}
-//@GetMapping("/findappartbyid")
-//public String findusersById(@RequestParam("appartid")int id,Model model)
-//{
-//	Appartments theappart=appartservice.findById(id);
-//	model.addAttribute("findappartid",theappart);
-//	return "find-appart-id-form";
-//}
+@GetMapping("/updateform")
+public String updateapparts(@RequestParam("id") int id, Model model)
+{
+	Appartments theappart=appartmentsService.findById(id);
+	model.addAttribute("updateland",theappart);
+	return "update-appartment-form";
+}
+@PostMapping("updateappart")
+public String updateappart(@ModelAttribute("updateland") Appartments theappart)
+{
+	appartmentsService.save(theappart);
+	return"redirect:/appartments/appartmentslist";
+}
+@GetMapping("/deleteland")
+public String deleteapp(@RequestParam("id")int id)
+{
+	appartmentsService.deleteById(id);
+	return "redirect:/appartments/appartmentslist";
+}
+@GetMapping("/findappartbyid")
+public String findusersById(@RequestParam("appartid")int id,Model model)
+{
+	Appartments theappart=appartmentsService.findById(id);
+	model.addAttribute("findappartid",theappart);
+	return "find-appart-id-form";
+}
 @GetMapping("/appartmentslist")
 public String getAllusers(Model model) {
-	List<Appartments>appartlist=appartmentsservice.getappart();
+	List<Appartments>appartlist=appartmentsService.getappart();
 	model.addAttribute("allapparts", appartlist);
 	return "list-appart";
 }

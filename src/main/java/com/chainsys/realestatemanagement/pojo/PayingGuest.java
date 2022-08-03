@@ -1,24 +1,24 @@
 package com.chainsys.realestatemanagement.pojo;
 
-import java.util.Date;
+import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 @Entity
-@Table(name="PayingGuest")
+@Table(name="pg")
 public class PayingGuest {
 
 @Id
 @Column(name="pg_id")
-			private	int pg_id ;
+			private	int pgId ;
 
 @Column(name="owner_id")
 private int ownerId;
 
 @Column(name="pg_location")
-private int	pgLocation;
+private String	pgLocation;
 
 @Column(name="pg_phoneno")
 private long pgPhoneno ;
@@ -38,17 +38,30 @@ private	String pgacNonac ;
 @Column(name="pg_status")
 private	String pgStatus ;
 
+public String getPgStatus() {
+	return pgStatus;
+}
+
+public void setPgStatus(String pgStatus) {
+	this.pgStatus = pgStatus;
+}
+
+@Column(name="pg_type")
+private String pgType;
+
+
+
 @Column(name="dates")
 private Date dates;
 
-
-public int getPg_id() {
-	return pg_id;
+public int getPgId() {
+	return pgId;
 }
 
-public void setPg_id(int pg_id) {
-	this.pg_id = pg_id;
+public void setPgId(int pgId) {
+	this.pgId = pgId;
 }
+
 
 public int getOwnerId() {
 	return ownerId;
@@ -58,11 +71,11 @@ public void setOwnerId(int ownerId) {
 	this.ownerId = ownerId;
 }
 
-public int getPgLocation() {
+public String getPgLocation() {
 	return pgLocation;
 }
 
-public void setPgLocation(int pgLocation) {
+public void setPgLocation(String pgLocation) {
 	this.pgLocation = pgLocation;
 }
 
@@ -106,13 +119,14 @@ public void setPgacNonac(String pgacNonac) {
 	this.pgacNonac = pgacNonac;
 }
 
-public String getPgStatus() {
-	return pgStatus;
-}
+//public String getPgStatus() {
+//	return pgStatus;
+//}
+//
+//public void setPgStatus(String pgStatus) {
+//	this.pgStatus = pgStatus;
+//}
 
-public void setPgStatus(String pgStatus) {
-	this.pgStatus = pgStatus;
-}
 
 public Date getDates() {
 	return dates;
@@ -120,6 +134,15 @@ public Date getDates() {
 
 public void setDates(Date dates) {
 	this.dates = dates;
+}
+
+
+public String getPgType() {
+	return pgType;
+}
+
+public void setPgType(String pgType) {
+	this.pgType = pgType;
 }
 
 

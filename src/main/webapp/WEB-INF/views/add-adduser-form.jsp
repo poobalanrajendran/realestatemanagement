@@ -37,7 +37,7 @@
                 Role : <form:radiobutton path="roles" value="User" />User
                          <form:radiobutton path="roles" value="Admin" />Admin
                 </div>
-      <div>
+     
       <br>
        <label for="emailId">email Id</label>
        <div >

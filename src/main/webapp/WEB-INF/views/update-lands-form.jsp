@@ -13,90 +13,105 @@
 <div id="form">
 <form:form action="updateland" method="post" modelAttribute="updateland">
 <div>
-       <label for="land_id">landId</label>
+       <label for="landId">landId</label>
        <div >
-        <form:input path="land_id"/>
+        <form:input path="landId"/>
        </div>
       </div>
+      <br>
       <div>
-       <label for="owner_id">ownerid</label>
+       <label for="ownerId">ownerid</label>
        <div >
-        <form:input path="owner_id"/>
+        <form:input path="ownerId"/>
        </div>
       </div>
+        <br>
       <div>
-       <label for="land_type">land_type</label>
+       <label for="locations">locations</label>
        <div >
-        <form:input path="land_type"/>
+        <form:input path="locations"/>
        </div>
       </div>
+        <br>
       <div>
-       <label for="land_length">land_length </label>
+       <label for="landLength">landLength </label>
        <div >
-        <form:input path="land_length"/>
+        <form:input path="landLength"/>
        </div>
       </div>
+        <br>
       <div>
-       <label for="land_breadth">land_breadth</label>
+       <label for="landBreadth">landBreadth</label>
        <div >
-        <form:input path="land_breadth"/>
+        <form:input path="landBreadth"/>
        </div>
       </div>
+        <br>
       <div>
-       <label for="land_squarefeet">land_squarefeet </label>
+       <label for="landSquarefeet">landSquarefeet </label>
        <div >
-        <form:input path="land_squarefeet"/>
+        <form:input path="landSquarefeet"/>
        </div>
       </div>
+        <br>
       <div>
-       <label for="land_surveyno">land_surveyno</label>
+       <label for="landSurveyno">landSurveyno</label>
        <div >
-        <form:input path="land_surveyno"/>
+        <form:input path="landSurveyno"/>
        </div>
       </div>
+        <br>
       <div>
-       <label for="land_pattano">land_pattano</label>
+       <label for="landPattano">landPattano</label>
        <div >
-        <form:input path="land_pattano"/>
+        <form:input path="landPattano"/>
        </div>
       </div>
+        <br>
       <div>
-       <label for="contact_number"> contact_number</label>
+       <label for="contactNumber"> contactNumber</label>
        <div >
-        <form:input path="contact_number"/>
+        <form:input path="contactNumber"/>
        </div>
       </div>
-       <div>
-       <label for="land_address">land_address </label>
+        <br>
+      <div>
+       <label for="landType">landType </label>
        <div >
-        <form:input path="land_address"/>
+        <form:input path="landType"/>
        </div>
       </div>
-       <div>
-       <label for="land_status">land_status</label>
+        <br>
+        <div>
+       <label for="landAddress">address </label>
        <div >
-        <form:input path="land_status"/>
+        <form:textarea path="landAddress" cols="50" rows="6" />
        </div>
       </div>
+      <br>
+      <div>
+               landStatus : <form:radiobutton path="landStatus" value="Sold" />Sold
+                         <form:radiobutton path="landStatus" value="Not Sold" />Not Sold
+                </div>
+     
+      <br>
        <div>
        <label for="price">price</label>
        <div >
         <form:input path="price"/>
        </div>
       </div>
-      <div>
-       <label for="dates">dates</label>
+        <br>
+     <div>
+       <label for="Dates">dates</label>
        <div >
-        <form:input path="dates"/>
+        <form:input type ="date" path="Dates"  />
        </div>
       </div>
+        <br>
       <div>
-       <label for="locations">dates</label>
-       <div >
-        <form:input path="locations"/>
-       </div>
-      </div>
-<form:button>AddLand</form:button>
+       
+<form:button>update Land detalis</form:button>
 </div>
 </form:form>
 </div>

@@ -12,26 +12,26 @@ import com.chainsys.realestatemanagement.pojo.Lands;
 @Service
 public class LandsService {
 @Autowired
-private LandsRepository landobj;
+private LandsRepository landRepo ;
 
 public List<Lands> getland()
 {
-	List<Lands>listland=landobj.findAll();
+	List<Lands>listland=landRepo.findAll();
 	return listland;
 }
 @Transactional
 
 	public Lands save(Lands land)
 	{
-	return landobj.save(land);
+	return landRepo.save(land);
 	}
 public Lands findById(int id)
 {
-	return landobj.findById(id);
+	return landRepo.findById(id);
 }
 @Transactional
 public void deleteById(int id)
 {
-	landobj.deleteById(id);
+	landRepo.deleteById(id);
 }
 }

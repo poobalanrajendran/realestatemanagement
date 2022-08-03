@@ -18,84 +18,97 @@
         <form:input path="landId"/>
        </div>
       </div>
+      <br>
       <div>
        <label for="ownerId">ownerid</label>
        <div >
         <form:input path="ownerId"/>
        </div>
       </div>
+        <br>
       <div>
        <label for="locations">locations</label>
        <div >
         <form:input path="locations"/>
        </div>
       </div>
+        <br>
       <div>
        <label for="landLength">landLength </label>
        <div >
         <form:input path="landLength"/>
        </div>
       </div>
+        <br>
       <div>
        <label for="landBreadth">landBreadth</label>
        <div >
         <form:input path="landBreadth"/>
        </div>
       </div>
+        <br>
       <div>
        <label for="landSquarefeet">landSquarefeet </label>
        <div >
         <form:input path="landSquarefeet"/>
        </div>
       </div>
+        <br>
       <div>
        <label for="landSurveyno">landSurveyno</label>
        <div >
         <form:input path="landSurveyno"/>
        </div>
       </div>
+        <br>
       <div>
        <label for="landPattano">landPattano</label>
        <div >
         <form:input path="landPattano"/>
        </div>
       </div>
+        <br>
       <div>
        <label for="contactNumber"> contactNumber</label>
        <div >
         <form:input path="contactNumber"/>
        </div>
       </div>
+        <br>
       <div>
        <label for="landType">landType </label>
        <div >
         <form:input path="landType"/>
        </div>
       </div>
-       <div>
-       <label for="landAddress">landAddress </label>
+        <br>
+        <div>
+       <label for="landAddress">address </label>
        <div >
-        <form:input path="landAddress"/>
+        <form:textarea path="landAddress" cols="50" rows="6" />
        </div>
       </div>
-       <div>
-       <label for="landStatus">land_status</label>
-       <div >
-        <form:input path="landStatus"/>
-       </div>
-      </div>
+      <br>
+      <div>
+               landStatus : <form:radiobutton path="landStatus" value="Sold" />Sold
+                         <form:radiobutton path="landStatus" value="Not Sold" />Not Sold
+                </div>
+     
+      <br>
        <div>
        <label for="price">price</label>
        <div >
         <form:input path="price"/>
        </div>
       </div>
-      <div>
-       <label for="dates">dates</label>
+        <br>
+     <div>
+       <label for="Dates">dates</label>
        <div >
-        <form:input path="dates"/>
+        <form:input type ="date" path="Dates"  />
        </div>
       </div>
+        <br>
       <div>
        
 <form:button>AddLand</form:button>

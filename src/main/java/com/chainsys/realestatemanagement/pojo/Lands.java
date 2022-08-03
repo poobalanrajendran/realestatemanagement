@@ -1,6 +1,8 @@
 package com.chainsys.realestatemanagement.pojo;
 
-import java.util.Date;
+import java.sql.Date;
+
+//import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -168,8 +170,4 @@ public class Lands {
 	public void setDates(Date dates) {
 		this.dates = dates;
 	}
-
-	
-	
-
 }

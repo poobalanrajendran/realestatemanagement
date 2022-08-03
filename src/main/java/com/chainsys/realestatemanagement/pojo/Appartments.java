@@ -1,6 +1,8 @@
 package com.chainsys.realestatemanagement.pojo;
 
-import java.util.Date;
+import java.sql.Date;
+
+//import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,7 +18,7 @@ public class Appartments {
 	private int ownerId ;
 	
 	@Column(name="app_locations")
-	private int appLocations  ;
+	private String appLocations  ;
 	
 	@Column(name="app_length")
 	private int appLength ;
@@ -33,7 +35,7 @@ public class Appartments {
 	@Column(name="app_pattano")
 	private int appPattano  ;
 	
-	@Column(name="appcontact")
+	@Column(name="appcontact_number")
 	private long appContact ;
 	
 	@Column(name="app_status")
@@ -74,11 +76,11 @@ public class Appartments {
 		this.ownerId = ownerId;
 	}
 
-	public int getAppLocations() {
+	public String getAppLocations() {
 		return appLocations;
 	}
 
-	public void setAppLocations(int appLocations) {
+	public void setAppLocations(String appLocations) {
 		this.appLocations = appLocations;
 	}
 

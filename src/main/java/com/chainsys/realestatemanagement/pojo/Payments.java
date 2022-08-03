@@ -1,6 +1,6 @@
 package com.chainsys.realestatemanagement.pojo;
 
-import java.util.Date;
+import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Payments")
+@Table(name="Payment")
 public class Payments {
 	@Id
 	@Column(name="invoice_id")

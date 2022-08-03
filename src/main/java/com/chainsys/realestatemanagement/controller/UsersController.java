@@ -18,7 +18,7 @@ import com.chainsys.realestatemanagement.service.UserService;
 @RequestMapping("/users")
 public class UsersController {
 	@Autowired
-	UserService userservice;
+	UserService userService;
 
 	@GetMapping("/usersform")
 	public String showAddForm(Model model) {
@@ -30,32 +30,32 @@ public class UsersController {
 	@PostMapping("addusers")
 
 	public String addNewUser(@ModelAttribute("adduser") Users theuser) {
-		userservice.save(theuser);
+		userService.save(theuser);
 		return "redirect:/users/userslist";
 	}
 
 	@GetMapping("/updateform")
 	public String showUpdateForm(@RequestParam("userid") int id, Model model) {
-		Users userupdate = userservice.findById(id);
+		Users userupdate = userService.findById(id);
 		model.addAttribute("updateuser", userupdate);
 		return "update-users-form";
 	}
 
 	@PostMapping("/updateuser")
 	public String updateuser(@ModelAttribute("updateuser") Users userid) {
-		userservice.save(userid);
+		userService.save(userid);
 		return "redirect:/users/userslist";
 	}
 
 	@GetMapping("/deleteusers")
 	public String deleteuser(@RequestParam("userid") int id) {
-		userservice.deleteById(id);
+		userService.deleteById(id);
 		return "redirect:/users/userslist ";
 	}
 
 	@GetMapping("/findusersbyid")
 	public String finduserById(@RequestParam("userid") int id, Model model) {
-		Users theuser = userservice.findById(id);
+		Users theuser = userService.findById(id);
 		model.addAttribute("finduserid", theuser);
 		return "find-user-id-form";
 	}
@@ -63,7 +63,7 @@ public class UsersController {
 	@GetMapping("/userslist")
 
 	public String getAlluser(Model model) {
-		List<Users> userlist = userservice.getuser();
+		List<Users> userlist = userService.getuser();
 		model.addAttribute("allusers", userlist);
 		return "list-users";
 	}

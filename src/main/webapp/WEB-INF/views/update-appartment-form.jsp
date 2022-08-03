@@ -11,7 +11,7 @@
 <body>
 <div id="root">
 <div id="form">
-<form:form action="addappart" method="post" modelAttribute="addapparts">
+<form:form action="" method="get" modelAttribute="findappartid">
 <div>
        <label for="appId">Appartment Id </label>
        <div >

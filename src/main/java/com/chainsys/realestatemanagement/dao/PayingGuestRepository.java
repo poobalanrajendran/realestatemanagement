@@ -5,16 +5,13 @@ import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 
 import com.chainsys.realestatemanagement.pojo.Appartments;
-import com.chainsys.realestatemanagement.pojo.Users;
+import com.chainsys.realestatemanagement.pojo.PayingGuest;
 
-public interface AppartmentsRepository extends CrudRepository< Appartments,Integer> {
-	 Appartments findById(int id);
-	
-	 Appartments save( Appartments appartment);
+public interface PayingGuestRepository extends CrudRepository< PayingGuest,Integer> {
+	PayingGuest findById(int id);
+		
+	PayingGuest save( PayingGuest app);
 	// used for adding a new customer and modifying the existing customer
 	void deleteById(int id);
-	List< Appartments> findAll();
-
-
-
+	List< PayingGuest> findAll();
 }
