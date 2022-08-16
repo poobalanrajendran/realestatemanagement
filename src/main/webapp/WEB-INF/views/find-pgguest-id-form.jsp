@@ -20,9 +20,9 @@
       </div>
       <br>
       <div>
-       <label for="ownerId">Owner Id</label>
+       <label for="rent">Rent cost</label>
        <div >
-        <form:input path="ownerId"  />
+        <form:input path="rent"  />
        </div>
       </div>
       <br>
@@ -32,54 +32,39 @@
                 </div>
      
       <br>
+   
+      
       <div>
-       <label for="pgLocation">PG Location</label>
-       <div >
-        <form:input path="pgLocation"  />
-       </div>
-      </div>
-      <br>
-      <div>
-                PG foodFacility : <form:radiobutton path="pgfoodFacility" value="Not Availabel" />Not Availabel
-                         <form:radiobutton path="pgfoodFacility" value="Availabel" /> Availabel
+                PG foodFacility : <form:radiobutton path="foodFacility" value="Not Availabel" />Not Availabel
+                         <form:radiobutton path="foodFacility" value="Availabel" /> Availabel
                 </div>
      
       <br>
-       <label for="pgPhoneno">PG Phoneno</label>
-       <div >
-        <form:input path="pgPhoneno"  />
-       </div>
-      </div>
-      <br>
+       
       <div>
-              PG A/C Non A/C : <form:radiobutton path="pgacNonac" value="A/C" />A/C
-                         <form:radiobutton path="pgacNonac" value="Non A/C" />Non A/C
+              PG A/C Non A/C : <form:radiobutton path="acNonac" value="A/C" />A/C
+                         <form:radiobutton path="acNonac" value="Non A/C" />Non A/C
                 </div>
                 <br>
-      <br>
+     
       <div>
-       <label for="pgAddress">PG Address </label>
+       <label for="advance">PG advance </label>
        <div >
-        <form:textarea path="pgAddress" cols="25" rows="3" />
+        <form:textarea path="advance" cols="25" rows="3" />
        </div>
       </div>
       <br>
       <div>
-       <label for="pgRent">PG Rent</label>
+       <label for="lift">PG lift</label>
        <div >
-        <form:input  path="pgRent"  />
+        <form:input  path="lift"  />
        </div>
       </div>
       <br>
-      <div>
-                PG Status : <form:radiobutton path="pgStatus" value="Avialabel" />Avialabel
-                         <form:radiobutton path="pgStatus" value="Not Avialabel" />Not Avialabel
-                </div>
-                <br>
-      <div>
-       <label for="Dates">dates</label>
+      
+       <label for="floor">dates</label>
        <div >
-        <form:input type ="date" path="Dates"  />
+        <form:input path ="floor"/>
        </div>
       </div>
   <br>

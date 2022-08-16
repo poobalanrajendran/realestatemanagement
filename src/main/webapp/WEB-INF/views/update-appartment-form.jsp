@@ -11,109 +11,44 @@
 <body>
 <div id="root">
 <div id="form">
-<form:form action="" method="get" modelAttribute="findappartid">
+<form:form action="updateappart" method="post" modelAttribute="updateland">
 <div>
-       <label for="appId">Appartment Id </label>
+       <label for="appartmentId">Appartment Id </label>
        <div >
-        <form:input path="appId"/>
+        <form:input type="number" path="appartmentId"/>
        </div>
       </div>
       <br>
       <div>
-       <label for="ownerId">Owner Id</label>
+       <label for="security">Security</label>
        <div >
-        <form:input path="ownerId"/>
+        <form:input
+         path="security" title="Name can't be empty"
+							pattern="^[A-Za-z]\\w{3,20$" required="true"/>
        </div>
       </div>
       <br>
       <div>
-       <label for="appLocations">Appartment Locations</label>
+       <label for="floor">floor</label>
        <div >
-        <form:input path="appLocations"/>
+        <form:input path="floor"/>
        </div>
       </div>
       <br>
       <div>
-       <label for="appLength">Appartment Length </label>
-       <div >
-        <form:input path="appLength"/>
+      <label for="lift">Appartment Lift </label>
+					<div>
+						<form:input path="lift" title="Name can't be empty"
+							pattern="^[A-Za-z]\\w{3,20$" required="true"/>
        </div>
+      </div>
+      <br>
       </div>
       <br>
       <div>
-       <label for="appBreadth">Appartment Breadth</label>
-       <div >
-        <form:input path="appBreadth"/>
-       </div>
-      </div>
-      <br>
-      <div>
-       <label for="appsquareFeet">Appartment squareFeet </label>
-       <div >
-        <form:input path="appsquareFeet"/>
-       </div>
-      </div>
-      <br>
-      <div>
-       <label for="appSurveyno">Appartment Surveyno</label>
-       <div >
-        <form:input path="appSurveyno"/>
-       </div>
-      </div>
-      <br>
-      <div>
-       <label for="appPattano">Appartment Pattano</label>
-       <div >
-        <form:input path="appPattano"/>
-       </div>
-      </div>
-      <br>
-      <div>
-       <label for="appContact">Appartment contact</label>
-       <div >
-        <form:input path="appContact"/>
-       </div>
-      </div>
-      <br>
-       <div>
-               Appartment Status : <form:radiobutton path="appStatus" value="Sold" />Sold
-                         <form:radiobutton path="appStatus" value="Not Sold" />Not Sold
-                </div>
-                <br>
-       <div>
-       <label for="appPrice">Appartment Price</label>
-       <div >
-        <form:input path="appPrice"/>
-       </div>
-      </div>
-      <br>
-       <div>
-               Appartment Lift : <form:radiobutton path="appLift" value="Available" />Available
-                         <form:radiobutton path="appLift" value="Not Available" />Not Available
-                </div>
-                <br>
-      <div>
-       <label for="appFloor">Appartment Floor</label>
-       <div >
-        <form:input path="appFloor"/>
-       </div>
-      </div>
-      <br>
-      <div>
-       <label for="appAddress">Appartment Address </label>
-       <div >
-        <form:textarea path="appAddress" cols="50" rows="6" />
-       </div>
-      </div>
-      <br>
-      <div>
-       <label for="Dates">dates</label>
-       <div >
-        <form:input type ="date" path="Dates"  />
-       </div>
-      </div>
-<form:button>Add Appartments</form:button>
-</div>
+
+					<form:button>update</form:button>
+				</div>
 </form:form>
 </div>
 </body>

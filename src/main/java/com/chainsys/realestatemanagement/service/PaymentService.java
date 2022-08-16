@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.chainsys.realestatemanagement.dao.PaymentsRepository;
-import com.chainsys.realestatemanagement.pojo.Payments;
+import com.chainsys.realestatemanagement.model.Payments;
 
 @Service
 public class PaymentService {
@@ -24,14 +24,18 @@ public Payments save(Payments payment)
 {
 	return paymentRepo.save(payment);
 }
-public Payments findById(int id)
+public Payments findById(long id)
 {
 	return paymentRepo.findById(id);
 }
 @Transactional
-public void deleteById(int id)
+public void deleteById(long id)
 {
 	paymentRepo.deleteById(id);
 }
-
+public List<Payments> getTransactionDetails(int buyerAssestid)
+{
+	List<Payments>listPayment=paymentRepo.findByBuyerAssestid(buyerAssestid);
+	return listPayment;
+}
 }

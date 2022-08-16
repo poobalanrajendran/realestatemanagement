@@ -13,12 +13,10 @@
 <table>
 <thead>
 <tr>
-<th>invoiceId</th>
-<th>landAssestid</th>
-<th>pgAssestid</th>
-<th>appartmentAssestid</th>
+<th>Invoice</th>
+<th>assestNumber</th>
 <th>buyerAssestid</th>
-<th>dates</th>
+<th>assetdate</th>
 <th>amount</th>
 
 </tr>
@@ -26,15 +24,15 @@
 <tbody>
 <c:forEach var="pay" items="${allpayment}"> 
 <tr>
-<td>${pay.invoiceId}</td>
-<td>${pay.landAssestid}</td>
-<td>${pay.pgAssestid}</td>
-<td>${pay.appartmentAssestid}</td>
+<td>${pay.invoice}</td>
+<td>${pay.id}</td>
 <td>${pay.buyerAssestid}</td>
-<td>${pay.dates}</td>
+<td>${pay.assetdate}</td>
 <td>${pay.amount}</td>
+
 </tr>
 </c:forEach>
+
 </tbody>
 </table>
 </div>

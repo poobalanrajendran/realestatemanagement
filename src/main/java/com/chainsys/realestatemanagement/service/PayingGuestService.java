@@ -6,8 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.chainsys.realestatemanagement.dao.PayingGuestRepository;
-
-import com.chainsys.realestatemanagement.pojo.PayingGuest;
+import com.chainsys.realestatemanagement.model.PayingGuest;
 
 @Service
 public class PayingGuestService {

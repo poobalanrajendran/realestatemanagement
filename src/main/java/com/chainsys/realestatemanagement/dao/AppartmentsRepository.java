@@ -4,8 +4,8 @@ import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.chainsys.realestatemanagement.pojo.Appartments;
-import com.chainsys.realestatemanagement.pojo.Users;
+import com.chainsys.realestatemanagement.model.Appartments;
+import com.chainsys.realestatemanagement.model.Users;
 
 public interface AppartmentsRepository extends CrudRepository< Appartments,Integer> {
 	 Appartments findById(int id);

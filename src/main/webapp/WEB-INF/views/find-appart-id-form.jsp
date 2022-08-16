@@ -13,107 +13,39 @@
 <div id="form">
 <form:form action="" method="post" modelAttribute="findappartid">
 <div>
-       <label for="appId">Appartment Id </label>
+       <label for="appartmentId">Appartment Id </label>
        <div >
-        <form:input path="appId"/>
+        <form:input path="appartmentId"/>
        </div>
       </div>
       <br>
       <div>
-       <label for="ownerId">Owner Id</label>
+       <label for="security">Security</label>
        <div >
-        <form:input path="ownerId"/>
+        <form:input path="security"/>
        </div>
       </div>
       <br>
       <div>
-       <label for="appLocations">Appartment Locations</label>
+       <label for="floor">floor</label>
        <div >
-        <form:input path="appLocations"/>
+        <form:input path="floor"/>
        </div>
       </div>
       <br>
       <div>
-       <label for="appLength">Appartment Length </label>
+       <label for="lift">Appartment Length </label>
        <div >
-        <form:input path="appLength"/>
+        <form:input path="lift"/>
        </div>
+      </div>
+      <br>
       </div>
       <br>
       <div>
-       <label for="appBreadth">Appartment Breadth</label>
-       <div >
-        <form:input path="appBreadth"/>
-       </div>
-      </div>
-      <br>
-      <div>
-       <label for="appsquareFeet">Appartment squareFeet </label>
-       <div >
-        <form:input path="appsquareFeet"/>
-       </div>
-      </div>
-      <br>
-      <div>
-       <label for="appSurveyno">Appartment Surveyno</label>
-       <div >
-        <form:input path="appSurveyno"/>
-       </div>
-      </div>
-      <br>
-      <div>
-       <label for="appPattano">Appartment Pattano</label>
-       <div >
-        <form:input path="appPattano"/>
-       </div>
-      </div>
-      <br>
-      <div>
-       <label for="appContact">Appartment contact</label>
-       <div >
-        <form:input path="appContact"/>
-       </div>
-      </div>
-      <br>
-       <div>
-               Appartment Status : <form:radiobutton path="appStatus" value="Sold" />Sold
-                         <form:radiobutton path="appStatus" value="Not Sold" />Not Sold
-                </div>
-                <br>
-       <div>
-       <label for="appPrice">Appartment Price</label>
-       <div >
-        <form:input path="appPrice"/>
-       </div>
-      </div>
-      <br>
-       <div>
-               Appartment Lift : <form:radiobutton path="appLift" value="Available" />Available
-                         <form:radiobutton path="appLift" value="Not Available" />Not Available
-                </div>
-                <br>
-      <div>
-       <label for="appFloor">Appartment Floor</label>
-       <div >
-        <form:input path="appFloor"/>
-       </div>
-      </div>
-      <br>
-      <div>
-       <label for="appAddress">Appartment Address </label>
-       <div >
-        <form:textarea path="appAddress" cols="50" rows="6" />
-       </div>
-      </div>
-      <br>
-      <div>
-       <label for="Dates">dates</label>
-       <div >
-        <form:input type ="date" path="Dates"  />
-       </div>
-      </div>
 
-</div>
+					<form:button>Add</form:button>
+				</div>
 </form:form>
 </div>
 </body>

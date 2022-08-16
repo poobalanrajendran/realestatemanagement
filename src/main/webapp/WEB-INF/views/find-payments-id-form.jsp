@@ -13,64 +13,47 @@
 <div id="form">
 <form:form action="" method="get" modelAttribute="findpayid">
 <div>
-       <label for="invoiceId">Invoice Id</label>
-       <div >
-        <form:input path="invoiceId"  />
-       </div>
-      </div>
-      <br>
-      <div>
-       <label for="landAssestid">LandAssest Id </label>
-       <div >
-        <form:input path="landAssestid"  />
-       </div>
-      </div>
-      <br>
-      
-      <div>
-     
-       <label for="pgAssestid"> Pgassest Id</label>
-       <div >
-        <form:input path="pgAssestid"  />
-       </div>
-      </div>
-      <br>
-      
-      
-      <div>
-       <label for="appartmentAssestid">AppartmentAssest Id</label>
-       <div >
-        <form:input path="appartmentAssestid"  />
-       </div>
-      </div>
-      <br>
-      
-      
-      <div>
-       <label for="buyerAssestid">Buyer AssestId</label>
-       <div >
-        <form:input  path="buyerAssestid"  />
-       </div>
-      </div>
-      <br>
-      <div>
-       <label for="Dates">dates</label>
-       <div >
-        <form:input type ="date" path="Dates"  />
-       </div>
-      </div>
-  <br>
-  <div>
-       <label for="amount">Amount</label>
-       <div >
-        <form:input  path="amount"  />
-       </div>
-      </div>
-       
-      
+					<label for="invoice">Invoice Id</label>
+					<div>
+						<form:input path="invoice" />
+					</div>
+				</div>
+				<br>
+				<div>
+					<label for="assestNumber">AssestNumber</label>
+					<div>
+						<form:input path="assestNumber" />
+					</div>
+				</div>
+				<br>
+				<div>
 
-</div>
-</form:form>
-</div>
+					<label for="buyerAssestid">buyerAsses</label>
+					<div>
+						<form:input path="buyerAssestid"/>
+					</div>
+				</div>
+				<br>
+				
+				<div>
+					<label for="assetdate">dates</label>
+					<div>
+						<form:input type="date" path="assetdate" />
+					</div>
+				</div>
+				<br>
+				<div>
+					<label for="amount">Amount</label>
+					<div>
+						<form:input path="amount" />
+					</div>
+				</div>
+				<div>
+					<form:button>click me for pay</form:button>
+				</div>
+		</div>
+		</form:form>
+	</div>
+	</div>
 </body>
 </html>

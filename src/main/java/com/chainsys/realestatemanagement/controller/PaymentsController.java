@@ -11,9 +11,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.chainsys.realestatemanagement.pojo.Lands;
-import com.chainsys.realestatemanagement.pojo.Payments;
-import com.chainsys.realestatemanagement.service.LandsService;
+import com.chainsys.realestatemanagement.model.Assest;
+//import com.chainsys.realestatemanagement.model.Assest;
+import com.chainsys.realestatemanagement.model.Payments;
+import com.chainsys.realestatemanagement.service.AssestService;
 import com.chainsys.realestatemanagement.service.PaymentService;
 
 @Controller
@@ -21,6 +22,8 @@ import com.chainsys.realestatemanagement.service.PaymentService;
 public class PaymentsController {
 	@Autowired
 	PaymentService paymentService;
+	@Autowired
+	AssestService assestService;
 	
 	@GetMapping("/paymentform")
 	public String showAddForm(Model model)
@@ -30,15 +33,38 @@ public class PaymentsController {
 		
 		return "add-addpayment-form";
 	}
+	
+	
 @PostMapping("addpaymentform")
-
-public String addNewLand(@ModelAttribute("addpay") Payments thePay)
+public String addNewLand(@ModelAttribute("addpay") Payments thePay,Model model)
 {
+	System.out.println("asset payment details......");
 	paymentService.save(thePay);
-	return "redirect:/payment/paymentlist";
+	System.out.println("asset buyer......"+thePay.getId());
+	Assest asset =null;// = new Assest();
+	asset = assestService.findById(thePay.getId());
+	asset.setStatus("Sold");
+	assestService.save(asset);
+	System.out.println("asset id......"+asset.getId());
+	
+	//
+	/*Payments obj=new Payments();
+	obj.setInvoice(obj.getInvoice());
+	obj.setBuyerAssestid(obj.getBuyerAssestid());
+	obj.setId(obj.getId());
+	obj.setAmount(obj.getAmount());
+	obj.setAssetdate(obj.getAssetdate());
+	obj.setCardNumber(obj.getCardNumber());
+	obj.setCvvNumber(obj.getCvvNumber());
+	obj.setNameHolder(obj.getNameHolder());
+	obj.setExpireMonth(obj.getExpireMonth());
+	obj.setExpireYear(obj.getExpireYear());
+	paymentService.save(obj);*/
+	
+	return "sucessPayment";
 }
 @GetMapping("/updateform")
-public String updatepayment(@RequestParam("id") int id, Model model) {
+public String updatepayment(@RequestParam("id") long id, Model model) {
 	Payments thePay = paymentService.findById(id);
 	model.addAttribute("updateland", thePay);
 	return "update-payments-form";
@@ -49,13 +75,13 @@ public String updatepay(@ModelAttribute("updatepay") Payments pay) {
 	return "redirect:/payment/paymentlist";
 }
 @GetMapping("/deleteland")
-public String deleteland(@RequestParam("id") int id) {
+public String deleteland(@RequestParam("id") long id) {
 	paymentService.deleteById(id);
 	return  "redirect:/payment/paymentlist";
 }
 
 @GetMapping("/findpaymentbyid")
-public String findpayById(@RequestParam("id")int id,Model model)
+public String findpayById(@RequestParam("id")long id,Model model)
 {
 	Payments thePay=paymentService.findById(id);
 model.addAttribute("findpayid",thePay);
@@ -68,6 +94,29 @@ public String getAllpay(Model model) {
 	model.addAttribute("allpayment", paymentList);
 	return "list-payment";
 }
+
+@GetMapping("/transactionDetails")
+public String getDetails(@RequestParam("userid")int userid,Model model)
+{
+	List<Payments> thePay=paymentService.getTransactionDetails(userid);
+model.addAttribute("allpayment",thePay);
+return "list-payment"; }
+
+@GetMapping("/admindeletepayment")
+public String deletepayment(@RequestParam("id") long id) {
+	paymentService.deleteById(id);
+	return  "list-landAdmin";
+}
+@GetMapping("/onlinepayment")
+
+	public String payment()
+	{
+	return"OnlinePayment";
+}
+
+
+
+
 }
 
 

@@ -1,0 +1,19 @@
+
+  
+    .mySlides {
+      display:none;
+      width:100%;
+    }
+  
+    .w3-sections{
+      margin-top: 0px !important;
+      margin-bottom: 0px !important;
+    }
+    
+    .w3-content-width{
+      width: 100%;
+    }
+  
+    .mySlides{
+      height: 610px;
+    }

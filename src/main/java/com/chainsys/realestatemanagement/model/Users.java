@@ -1,44 +1,49 @@
-package com.chainsys.realestatemanagement.pojo;
+package com.chainsys.realestatemanagement.model;
 
 
 import java.sql.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 @Entity
-@Table(name="Users")
+@Table(name="users")
 public class Users {
 	@Id
 	@Column(name="users_id")
-	private int usersId;
-	
+	private int usersId;	
 	@Column(name="users_name")
 	private String usersName ;
-	
 	@Column(name="passwords")
-	private String passwords ;
-	
+	private String passwords ;	
 	@Column(name="roles")
-	private String roles ;
-	
+	private String roles ;	
 	@Column(name="gender")
-	private String gender;
-	
+	private String gender;	
 	@Column(name="email_id")
 	private String emailId ;
-	
 	@Column(name="address")
-	private String address ;
-	
+	private String address ;	
 	@Column(name="phone_no")
 	private long phoneno;
-	
 	@Column(name="dates")
 	private Date dates;
 	
+	@OneToMany(mappedBy="users",fetch=FetchType.LAZY)
+	private List<Assest> asset; 
 	
+	public List<Assest> getAsset() {
+		return asset;
+	}
+
+	public void setAsset(List<Assest> asset) {
+		this.asset = asset;
+	}
+
 	public int getUsersId() {
 		return usersId;
 	}

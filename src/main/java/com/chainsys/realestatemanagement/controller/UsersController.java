@@ -5,13 +5,15 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.chainsys.realestatemanagement.pojo.Users;
+import com.chainsys.realestatemanagement.dto.UsersAndAssetDTO;
+import com.chainsys.realestatemanagement.model.Users;
 import com.chainsys.realestatemanagement.service.UserService;
 
 @Controller
@@ -24,13 +26,15 @@ public class UsersController {
 	public String showAddForm(Model model) {
 		Users theuser = new Users();
 		model.addAttribute("adduser", theuser);
+		
 		return "add-adduser-form";
 	}
 
-	@PostMapping("addusers")
+	@PostMapping("/addusers")
 
 	public String addNewUser(@ModelAttribute("adduser") Users theuser) {
 		userService.save(theuser);
+		System.out.println(theuser);
 		return "redirect:/users/userslist";
 	}
 
@@ -39,12 +43,18 @@ public class UsersController {
 		Users userupdate = userService.findById(id);
 		model.addAttribute("updateuser", userupdate);
 		return "update-users-form";
+		
 	}
 
 	@PostMapping("/updateuser")
 	public String updateuser(@ModelAttribute("updateuser") Users userid) {
 		userService.save(userid);
-		return "redirect:/users/userslist";
+		//return "redirect:/users/userslist";
+		return "update-users-form";
+		//return "index1";
+		//return "redirect:/users/findusersbyid";
+		//return null;
+
 	}
 
 	@GetMapping("/deleteusers")
@@ -57,7 +67,8 @@ public class UsersController {
 	public String finduserById(@RequestParam("userid") int id, Model model) {
 		Users theuser = userService.findById(id);
 		model.addAttribute("finduserid", theuser);
-		return "find-user-id-form";
+		//return "find-user-id-form";
+		return "list-land";
 	}
 
 	@GetMapping("/userslist")
@@ -67,4 +78,48 @@ public class UsersController {
 		model.addAttribute("allusers", userlist);
 		return "list-users";
 	}
+	
+	@GetMapping("/getuserassests")
+    public String getDetail(@RequestParam("id") int id,Model model) {
+		UsersAndAssetDTO dto =userService.getUsersAndAssetDetail(id);//getBloodGroupPersonDetail(id);
+        model.addAttribute("userslist" ,dto.getUser());//.getBloodgroup());
+        model.addAttribute("assetlist",dto.getAssestlist());//.getPersonlist());
+        return "list-userdetails-assest-byid";
+    }
+	
+	@GetMapping("/login")
+public String loginForm(Model model)
+{
+	Users theuser = new Users();
+	model.addAttribute("userlogin", theuser);
+	return "login";
+	
+}
+
+
+@PostMapping("/validlogin")
+public String loginUser(@ModelAttribute("userlogin") Users user, Model model)
+{
+	model.addAttribute("userlogin", user);
+	Users userlist = userService.getByUserName(user.getUsersName());
+	System.out.println("userlist password"+userlist.getPasswords());
+	
+	if(!StringUtils.isEmpty(userlist.getPasswords()) &&
+			user.getPasswords().equals(user.getPasswords())) {
+		model.addAttribute("Testusers", userlist);
+		return "UserHome";
+	}else {
+		System.out.println("Invalid Users");
+		model.addAttribute("userInvalid", "Invalid User");
+	}
+	return "login";
+	
+		
+}
+
+@GetMapping("/deleteuserAdmin")
+public String deleteusers(@RequestParam("userid") int id) {
+	userService.deleteById(id);
+	return "list-landAdmin";
+}
 }

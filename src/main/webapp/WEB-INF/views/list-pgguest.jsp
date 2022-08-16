@@ -15,32 +15,27 @@
 <thead>
 <tr>
 <th>pgId</th>
-<th>ownerId</th>
-<th>pgLocation</th>
-<th>pgPhoneno</th>
-<th>pgAddress</th>
-<th>pgRent</th>
-<th>pgfoodFacility</th>
-<th>pgacNonac</th>
-<th>pgStatus</th>
+<th>rent</th>
+<th>foodFacility</th>
+<th>acNonac</th>
+<th>advance</th>
+<th>lift</th>
+<th>floor</th>
 <th>pgType</th>
-<th>dates</th>
 </tr>
 </thead>
 <tbody>
 <c:forEach var="pg" items="${allpg}"> 
 <tr>
 <td>${pg.pgId}</td>
-<td>${pg.ownerId}</td>
-<td>${pg.pgLocation}</td>
-<td>${pg.pgPhoneno}</td>
-<td>${pg.pgAddress}</td>
-<td>${pg.pgRent}</td>
-<td>${pg.pgfoodFacility}</td>
-<td>${pg.pgacNonac}</td>
-<td>${pg.pgStatus}</td>
+<td>${pg.rent}</td>
+<td>${pg.foodFacility}</td>
+<td>${pg.acNonac}</td>
+<td>${pg.advance}</td>
+<td>${pg.lift}</td>
+<td>${pg.floor}</td>
 <td>${pg.pgType}</td>
-<td>${pg.dates}</td>
+
 
 
 </tr>

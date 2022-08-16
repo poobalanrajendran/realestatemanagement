@@ -7,9 +7,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.chainsys.realestatemanagement.dao.AppartmentsRepository;
-import com.chainsys.realestatemanagement.dao.LandsRepository;
-import com.chainsys.realestatemanagement.pojo.Appartments;
-import com.chainsys.realestatemanagement.pojo.Lands;
+import com.chainsys.realestatemanagement.dao.AssestRepository;
+import com.chainsys.realestatemanagement.model.Appartments;
+import com.chainsys.realestatemanagement.model.Assest;
 
 @Service
 public class AppartmentsService {

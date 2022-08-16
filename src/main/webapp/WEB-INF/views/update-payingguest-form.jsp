@@ -11,18 +11,18 @@
 <body>
 <div id="root">
 <div id="form">
-<form:form action="updateguest" method="post" modelAttribute="updateland">
+<form:form action="/guest/updateguest" method="post" modelAttribute="updateland">
 <div>
        <label for="pgId">Paying Guest Id</label>
        <div >
-        <form:input path="pgId"  />
+        <form:input type="number" path="pgId" required="true" title="Enter the integer only"/>
        </div>
       </div>
       <br>
       <div>
-       <label for="ownerId">Owner Id</label>
+       <label for="rent">Rent cost</label>
        <div >
-        <form:input path="ownerId"  />
+        <form:input path="rent" required ="true" title="Enter the integer only"/>
        </div>
       </div>
       <br>
@@ -32,59 +32,44 @@
                 </div>
      
       <br>
+   
+      
       <div>
-       <label for="pgLocation">PG Location</label>
-       <div >
-        <form:input path="pgLocation"  />
-       </div>
-      </div>
-      <br>
-      <div>
-                PG foodFacility : <form:radiobutton path="pgfoodFacility" value="Not Availabel" />Not Availabel
-                         <form:radiobutton path="pgfoodFacility" value="Availabel" /> Availabel
+                PG foodFacility : <form:radiobutton path="foodFacility" value="Not Availabel" />Not Availabel
+                         <form:radiobutton path="foodFacility" value="Availabel" /> Availabel
                 </div>
      
       <br>
-       <label for="pgPhoneno">PG Phoneno</label>
-       <div >
-        <form:input path="pgPhoneno"  />
-       </div>
-      </div>
+       
       <div>
-              PG A/C Non A/C : <form:radiobutton path="pgacNonac" value="A/C" />A/C
-                         <form:radiobutton path="pgacNonac" value="Non A/C" />Non A/C
+              PG A/C Non A/C : <form:radiobutton path="acNonac" value="A/C" />A/C
+                         <form:radiobutton path="acNonac" value="Non A/C" />Non A/C
                 </div>
                 <br>
-      <br>
+     
       <div>
-       <label for="pgAddress">PG Address </label>
+       <label for="advance">PG advance </label>
        <div >
-        <form:textarea path="pgAddress" cols="25" rows="3" />
+        <form:input type="number" path="advance" required ="true" title="Enter the integer only" />
        </div>
       </div>
       <br>
-      <div>
-       <label for="pgRent">PG Rent</label>
-       <div >
-        <form:input  path="pgRent"  />
-       </div>
-      </div>
-      <br>
-      <div>
-                PG Status : <form:radiobutton path="pgStatus" value="Avialabel" />Avialabel
-                         <form:radiobutton path="pgStatus" value="Not Avialabel" />Not Avialabel
+     <div>
+              Lift : <form:radiobutton path="lift" value="Available" required ="true"/>Available
+                         <form:radiobutton path="lift" value="Not Available" required ="true"/>Not Available
                 </div>
-                <br>
-      <div>
-       <label for="Dates">dates</label>
+      <br>
+      
+       <label for="floor">Floor</label>
        <div >
-        <form:input type ="date" path="Dates"  />
+        <form:input path ="floor" title="Name can't be empty"
+						pattern="^[A-Za-z]\\w{1,20}$" required ="true"/>
        </div>
       </div>
   <br>
        
       
-<form:button>Update PG</form:button>
+<form:button>update</form:button>
 </div>
 </form:form>
 </div>

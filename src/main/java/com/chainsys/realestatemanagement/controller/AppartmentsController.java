@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.chainsys.realestatemanagement.pojo.Appartments;
+import com.chainsys.realestatemanagement.model.Appartments;
 import com.chainsys.realestatemanagement.service.AppartmentsService;
 
 @Controller
@@ -22,11 +22,13 @@ public class AppartmentsController {
 	
 	@GetMapping("/appartmentsform")
 	
-	public String showAddform(Model model)
+	public String showAddform(@RequestParam("id")int appartid, Model model)
 	{
 	Appartments theappart=new Appartments();
+	theappart.setAppartmentId(appartid);
 	model.addAttribute("addapparts", theappart);
 	return "add-addappart-form";
+	
 	}
 	@PostMapping("addappart")
 	public String addNewappart(@ModelAttribute("addapparts") Appartments theappart)
@@ -67,4 +69,10 @@ public String getAllusers(Model model) {
 	return "list-appart";
 }
 
+@GetMapping("/adminappartmentdelete")
+public String deleteappart(@RequestParam("id")int id)
+{
+	appartmentsService.deleteById(id);
+	return "list-landAdmin";
+}
 }
