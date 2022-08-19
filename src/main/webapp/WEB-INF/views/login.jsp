@@ -187,7 +187,7 @@ button {
 </style>
 
 </head>
-<body>
+<body style="background-color: #ABB2B9;">
 	<div class="app">
 
 		<div class="bg"></div>
@@ -195,11 +195,11 @@ button {
 		<form action="/home/userpage" method="post" modelAttribute="signIn">
 			<header>
 				<img
-					src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVYq5SvPw9gYATcRgyhZWVpqHltZL29dydAg&usqp=CAU"">
+					src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVYq5SvPw9gYATcRgyhZWVpqHltZL29dydAg&usqp=CAU">
 			</header>
 
 			<div class="inputs">
-				<input type="UserId"  id="usersId" name="usersId" placeholder="UserId">
+				<input type="text"  id="usersId" name="usersId" placeholder="UserId">
 				<input type="password"  id="passwords"  name="passwords" placeholder="password">
 
 				<p class="light">

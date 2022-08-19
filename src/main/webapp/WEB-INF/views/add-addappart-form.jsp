@@ -3,28 +3,31 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>addappart</title>
 <style>
-div.container {
-	border-radius: 5px;
-	background-color: #f2f2f2;
-	padding: 20px;
+<%@include file="css/appartment.css"%>
 }
 </style>
 </head>
+<script>
+function display()
+{
+	alert("Apartment is Added");
+	}
+</script>
 <body>
 <div class="container">
 	<div id="root">
 		<div id="form">
-			<form:form action="addappart" method="post"
-				modelAttribute="addapparts">
+			<form:form action="addappart" method="post" modelAttribute="addapparts">
+			<h1>Apartment</h1>
 				<div>
 					<label for="appartmentId">Appartment Id </label>
 					<div>
-						<form:input type="number" path="appartmentId" required="true"/>
+						<form:input path="appartmentId" pattern="[0-9]{4}" required="true"/>
 					</div>
 				</div>
 				<br>
@@ -52,13 +55,14 @@ div.container {
 					</div>
 				</div>
 				<br>
-		</div>
+		
 		<br>
 		<div>
 
-			<form:button>Add</form:button>
+			<form:button  class="btn" onclick="display()">Add</form:button>
 		</div>
 		</form:form>
+		</div>
 	</div>
 	</div>
 </body>

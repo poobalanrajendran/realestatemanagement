@@ -1,8 +1,11 @@
 package com.chainsys.realestatemanagement.controller;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,14 +13,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
-import com.chainsys.realestatemanagement.dao.AppartmentsRepository;
-import com.chainsys.realestatemanagement.dao.PayingGuestRepository;
 import com.chainsys.realestatemanagement.dto.AssetAndPaymentDTO;
-import com.chainsys.realestatemanagement.model.Appartments;
 import com.chainsys.realestatemanagement.model.Assest;
-import com.chainsys.realestatemanagement.model.AssetPayGuestAppartment;
-import com.chainsys.realestatemanagement.model.PayingGuest;
 import com.chainsys.realestatemanagement.service.AppartmentsService;
 import com.chainsys.realestatemanagement.service.AssestService;
 import com.chainsys.realestatemanagement.service.PayingGuestService;
@@ -50,12 +50,22 @@ public class AssestController {
 	 */
 	
 	@PostMapping("addasset")
-	public String addNewLand(@ModelAttribute("addasset") Assest theassest, Model model) {
+	public String addNewLand(@ModelAttribute("addasset") Assest theassest, @RequestParam("photo") MultipartFile photo, Model model) {
+		try {
+			System.out.println(photo.getBytes().length);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		try {
+			theassest.setImage(photo.getBytes());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		assestService.save(theassest);
-		if (theassest.getAssestType().equals("pg")) {
+		if (theassest.getAssestType().equals("PG")) {
 			return "redirect:/guest/pgform?id="+theassest.getId();
 		} 
-		else if(theassest.getAssestType().equals("Appartment"))
+		else if(theassest.getAssestType().equals("Apartment"))
 		{
 			return "redirect:/appartments/appartmentsform?id="+theassest.getId();
 		}
@@ -196,4 +206,12 @@ public class AssestController {
 	 * objAppt.setLift(assestDetails.getLift());
 	 * objAppt.setSecurity(assestDetails.getSecurity()); return objAppt; }
 	 */
+
+@ResponseBody
+	@GetMapping("/getimage")
+	public ResponseEntity<byte[]> getImage(@RequestParam("id") int id) {
+		byte[] imageBytes = assestService.getPostImageByteArray(id);
+		return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(imageBytes);
+	}
+	
 }

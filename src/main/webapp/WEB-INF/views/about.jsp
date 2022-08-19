@@ -29,14 +29,17 @@
     </style>
 </head>
 <body>
+ <!-- <form:form action="" method="get"> -->
     <div class="cs-about">
         <div class="cs-about-1">
+    
         Real estate management is utilized for any type of rental property, including residential rentals or commercial real estate. The management company helps manage the daily operations of the rental property or portfolio of properties on behalf of the landlord. The manager oversees rental operations as well as the upkeep of the property and coordinates the buying and selling of a property with a real estate agent.
         <br>
         <br>
         A professional property manager will manage all aspects of their clients’ properties, from screening prospective tenants to collecting rent. They handle all the maintenance requests from the tenant and will hire the appropriate service to repair any issues. A property management company will even take care of evictions and filing any paperwork associated with it or other government programs. Think of real estate property management as a one-stop shop for all of your landlord needs.
         </div>
-        <img class="About-img" src="../WEB-INF/views/images/Appartment1.jpg" style="width:100%">
+        <img class="About-img" src="https://thumbs.dreamstime.com/z/modern-real-estate-house-building-city-construction-concept-evening-outdoor-urban-view-homes-40083842.jpg" style="width:100%">
     </div>
+     <!-- </form:form> -->
 </body>
 </html>

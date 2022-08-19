@@ -4,12 +4,9 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.chainsys.realestatemanagement.dao.AppartmentsRepository;
-import com.chainsys.realestatemanagement.dao.AssestRepository;
 import com.chainsys.realestatemanagement.model.Appartments;
-import com.chainsys.realestatemanagement.model.Assest;
 
 @Service
 public class AppartmentsService {

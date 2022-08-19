@@ -56,7 +56,12 @@ public class  LoginController {
     {
     	Login login = new Login();
         model.addAttribute("space",login);
-    	return"home";
+    	return"index1";
+    }
+    @GetMapping("/about")
+    public String aboutpage()
+    {
+    	return "about";
     }
     
 	/*

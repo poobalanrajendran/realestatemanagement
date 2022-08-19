@@ -3,66 +3,71 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title></title>
 <style>
 
-div.container {
-	border-radius: 5px;
-	background-color: #f2f2f2;
-	padding: 20px;
-}
+<%@include file="css/payment.css"%>
 </style>
 
 </head>
 <body>
 <div class="container">
-	<div id="root">
-		<div id="form">
+
 			<form:form action="addpaymentform" method="post"
 				modelAttribute="addpay">
-				<div>
+				<h1>Payment Details</h1>
+				<div class="row">
+                <div class="col-25">
 					<label for="invoice">Invoice Id</label>
-					<div>
-						<form:input type="number" path="invoice" required="true" title="Enter the integer only"/>
+					</div>
+					<div class="col-75">
+						<form:input path="invoice" pattern="[0-9]{6}" required="true" title="Enter the integer only"/>
 					</div>
 				</div>
 				<br>
-				<div>
+				<div class="row">
+                <div class="col-25">
 					<label for="id">AssestId</label>
-					<div>
-						<form:input type="number" path="id" required="true" title="Enter the integer only"/>
+					</div>
+					<div class="col-75">
+						<form:input path="id" pattern="[0-9]{4}" title="Enter the integer four only" required="true"/>
 					</div>
 				</div>
 				<br>
-				<div>
-
+				<div class="row">
+                <div class="col-25">
 					<label for="buyerAssestid">UserId</label>
-					<div>
-						<form:input type="number" path="buyerAssestid" required="true" title="Enter the integer only"/>
+					</div>
+					<div class="col-75">
+						<form:input path="buyerAssestid" pattern="[0-9]{4}" title="Enter the integer four only" required="true"/>
 					</div>
 				</div>
 				<br>
 				
-				<div>
+				<div class="row">
+                <div class="col-25">
 					<label for="assetdate">date</label>
-					<div>
+					</div>
+					<div class="col-75">
 						<form:input type="date" path="assetdate" required="true"/>
 					</div>
 				</div>
 				<br>
-				<div>
+				<div class="row">
+                <div class="col-25">
 					<label for="amount">Amount</label>
-					<div>
-						<form:input type="number" path="amount" title="Enter the integer only"/>
+					</div>
+					<div class="col-75">
+						<form:input path="amount" pattern="[0-9]{5,7}" title="Enter the integer five to seven digit only" required="true"/>
 					</div>
 				</div>
-				<div>
+				
 				<br>
 				
-				<div>
+				<div class="row">
 						CardMode:
 						<form:radiobutton path="cardMode" value="DebitCard"/>
 					DebitCard
@@ -71,25 +76,31 @@ div.container {
 					</div>
 				
 				<br>
-				<div>
+			<div class="row">
+                <div class="col-25">
        <label for="cardNumber">Card Number</label>
-       <div >
-        <form:input type="number" path="cardNumber" pattern="^[1-9]{4}[-]{1}[0-9]{4}[-]{1}[0-9]{4}$" title="Enter the integer only" required="true" />
+       </div>
+       <div class="col-75">
+        <form:input path="cardNumber" pattern="[0-9]{12}" title="Enter the integer 12 digit only" required="true" />
        </div>
       </div>
       <br>
 				
-				<div>
+				<div class="row">
+                <div class="col-25">
        <label for=nameHolder>CardHolderName</label>
-       <div >
+       </div>
+       <div class="col-75">
         <form:input  path="nameHolder" pattern="^[a-zA-Z]+$" title="Enter the Name" required="true"  />
        </div>
       </div>
       <br>
       
-      <div>
+     <div class="row">
+                <div class="col-25">
                     <label for="CardType" class="label-size">CardType</label>
-                    <div>
+                    </div>
+                    <div class="col-75">
                         <form:select path="cardType" class="text-box" placeholder="cardType" title="can't be empty"
 						 required="true">
                             <form:option value="Rupay">Rupay</form:option>
@@ -103,92 +114,44 @@ div.container {
 				</div>
 				<br>
 				
-				<div>
+				<div class="row">
+                <div class="col-25">
        <label for="cvvNumber">CVV Number</label>
-       <div >
-        <form:input type="number" path="cvvNumber" pattern="[0-9]{3}" title="Enter the integer only" required="true"  />
+       </div>
+        <div class="col-75">
+        <form:input path="cvvNumber" pattern="[0-9]{3}" title="Enter the integer only" required="true"  />
        </div>
       </div>
       <br>
-      <div>
+    <div class="row">
+                <div class="col-25">
        <label for="expireMonth">Expire Month</label>
-       <div >
-        <form:input type="number" path="expireMonth" pattern="[0-9]{2}" required="true" title="Enter the integer only"  />
+       </div>
+        <div class="col-75">
+        <form:input path="expireMonth" pattern="[0-9]{2}" title="Enter the integer two digit only" required="true" />
        </div>
       </div>
       <br>
-      <div>
+  <div class="row">
+                <div class="col-25">
        <label for="expireYear">Expire Year</label>
-       <div >
-        <form:input type="number" path="expireYear" pattern="[0-9]{4}" required="true" title="Enter the integer only" />
+       </div>
+               <div class="col-75">
+       
+        <form:input path="expireYear" pattern="[0-9]{4}" title="Enter the integer two digit only" required="true" />
        </div>
       </div>
       
       <br>
-				
-				<!-- <div class="col">
-						<h3 class="title">Online Payment</h3>
-
-						<div class="inputBox">
-							<span>Card Holder Name :</span> <input type="text"
-								placeholder="john deo" pattern="^[a-zA-Z]+$" required="true" />
-						</div>
-						<br>
-						<div class="inputBox">
-							<span> card number :</span> <input type="number" placeholder="11"
-								pattern="^[1-9]{4}[-]{1}[0-9]{4}[-]{1}[0-9]{4}$"
-								title="Adhaar must be number(ex: 1234-5678-9012)"
-								required="true" />
-						</div>
-						<br>
-						<div>
-							<label for="card">CardType:</label> <select name="card" id="card">
-								<option value="Credit Card">No Card</option>
-								<option value="Credit Card">Credit Card</option>
-								<option value="Debit Card">Debit Card</option>
-							</select>
-						</div>
-						<br>
-						<div>
-							<label for="card">CardName:</label> <select name="card" id="card">
-								<option value="NoCard">NoCard</option>
-								<option value="RuPay">RuPay</option>
-								<option value="MasterCard">MasterCard</option>
-								<option value="VISA">VISA</option>
-								<option value="Maestro">Maestro</option>
-
-							</select>
-						</div>
-						<br>
-
-						<div class="inputBox">
-							<span>expire month :</span> <input type="text"
-								placeholder="january" pattern="[0-9]{4}">
-						</div>
-						<br>
-						<div class="flex">
-							<div class="inputBox">
-								<span>expire year :</span> <input type="text"
-									placeholder="india" pattern="[0-9]{4}">
-							</div>
-							<br>
-							<div class="inputBox">
-								<span>CVV :</span> <input type="text" placeholder="123"
-									pattern="[0-9]{3}">
-							</div>
-							<br>
-						</div>
-					</div>
-					<br>				
-					 -->
-					//
-				
-					<form:button>Payment</form:button>
+								
+				<div class="row">
+					<form:button class="btn">Payment</form:button>
 				</div>
-		</div>
+	
 		</form:form>
+	
+	
 	</div>
-	</div>
-	</div>
+	
 </body>
 </html>

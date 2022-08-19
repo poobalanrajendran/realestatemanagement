@@ -9,6 +9,7 @@
 <meta charset="ISO-8859-1">
 <title>Land List</title>
 <style type="text/css">
+/* 
 tr:hover {background-color: #ECF32D;}
 table, th, td {
   border: 1px solid black;
@@ -20,12 +21,12 @@ tr:nth-child(even) {
 
 th:nth-child(even),td:nth-child(even) {
   background-color: rgba(300, 120, 130, 0.4);
-}
+} */
+<%@include file="css/chennailocationtable.css"%>
 </style>
 </head>
 <body>
-	<div id="table root">
-		<table border="1">
+	<table id="alter" class="center"><caption></caption>
 			<thead>
 				<tr>
 					<th>id</th>
@@ -44,12 +45,13 @@ th:nth-child(even),td:nth-child(even) {
 					<th>approvedType</th>
 					<th>facing</th>
 					<th>assestType</th>
+					<th>image</th>
 					<th>Register</th>
 				</tr>
 			</thead>
 			<tbody>
 				<c:forEach var="lan" items="${alllands}">
-					
+					<tr>
 						<td>${lan.id}</td>
 						<td>${lan.usersId}</td>
 						<td>${lan.location}</td>
@@ -66,13 +68,12 @@ th:nth-child(even),td:nth-child(even) {
 						<td>${lan.approvedType}</td>
 						<td>${lan.facing}</td>
 						<td>${lan.assestType}</td>
+						<td>${lan.image} <img width="350" height="250" src="getimage?id=${image.id}" alt="image"></td>
 						
-						<td><button onclick="window.location.href='/payment/paymentform'">Buy</button></td>
-
-					</tr>
+						<td><button  class ="btn" onclick="window.location.href='/payment/paymentform'">Buy</button></td>
+				</tr>
 				</c:forEach>
 			</tbody>
 		</table>
-	</div>
 </body>
 </html>

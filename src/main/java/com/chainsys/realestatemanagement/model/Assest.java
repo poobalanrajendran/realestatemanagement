@@ -20,7 +20,17 @@ public class Assest {
 	private int id;
 	@Column(name = "owner_id")
 	private int usersId;
-	//private int ownerId;
+	@Column(name="post")
+	private byte[] image;
+	public byte[] getImage() {
+		return image;
+	}
+
+	public void setImage(byte[] image) {
+		this.image = image;
+	}
+
+//private int ownerId;
 //	public int getOwnerId() {
 //		return ownerId;
 //	}

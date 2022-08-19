@@ -5,11 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.chainsys.realestatemanagement.dao.AppartmentsRepository;
 import com.chainsys.realestatemanagement.dao.AssestRepository;
 import com.chainsys.realestatemanagement.dao.PaymentsRepository;
 import com.chainsys.realestatemanagement.dto.AssetAndPaymentDTO;
-import com.chainsys.realestatemanagement.model.Appartments;
 import com.chainsys.realestatemanagement.model.Assest;
 import com.chainsys.realestatemanagement.model.Payments;
 
@@ -72,4 +70,19 @@ private PaymentsRepository paymentrepo;
 	dto.setPayments(payments);
 	return dto;
 	}*/
+	public byte[] getPostImageByteArray(int id) {
+		Assest post = assestrepo.findById(id);
+		byte[] imageBytes = null;
+			
+			if(post != null)
+			{
+				imageBytes = post.getImage();
+			}
+			else
+			{	
+				System.out.println("debug:" + this.getClass().getName() + " image is null " + id);
+			}	
+		return imageBytes;
+	}
+
 }

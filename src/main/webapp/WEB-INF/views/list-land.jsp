@@ -43,6 +43,7 @@ th:nth-child(even),td:nth-child(even) {
 					<th>approvedType</th>
 					<th>facing</th>
 					<th>assestType</th>
+					<th>image</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -64,6 +65,7 @@ th:nth-child(even),td:nth-child(even) {
 						<td>${lan.approvedType}</td>
 						<td>${lan.facing}</td>
 						<td>${lan.assestType}</td>
+						<td>${lan.image} <img width="100" height="100" src="getimage?id=${image.id}" alt="image"></td>
 						
 
 					</tr>

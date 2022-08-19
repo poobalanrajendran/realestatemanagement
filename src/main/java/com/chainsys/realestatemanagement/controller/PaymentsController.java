@@ -113,10 +113,6 @@ public String deletepayment(@RequestParam("id") long id) {
 	{
 	return"OnlinePayment";
 }
-
-
-
-
 }
 
 
