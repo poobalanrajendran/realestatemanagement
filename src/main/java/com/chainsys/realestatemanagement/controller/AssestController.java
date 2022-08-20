@@ -90,7 +90,7 @@ public class AssestController {
 	}
 
 	@PostMapping("updateland")
-	public String updateland(@ModelAttribute("updateland") Assest theAssest) {
+	public String updateAssest(@ModelAttribute("updateland") Assest theAssest) {
 		assestService.save(theAssest);
 
 		return "redirect:/assest/landlist";

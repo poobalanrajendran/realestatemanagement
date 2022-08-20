@@ -11,13 +11,13 @@
 </head>
 <body>
 <div id="table root">
-<table>
+<table><caption></caption>
 <thead>
 <tr>
-<th>appartmentId</th>
-<th>security</th>
-<th>floor</th>
-<th>lift</th>
+<th scope="col">appartmentId</th>
+<th scope="col">security</th>
+<th scope="col">floor</th>
+<th scope="col">lift</th>
 
 </tr>
 </thead>

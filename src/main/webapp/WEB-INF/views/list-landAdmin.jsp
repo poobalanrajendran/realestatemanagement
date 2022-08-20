@@ -11,30 +11,30 @@
 </head>
 <body>
 	<div id="table root">
-		<table border="1">
+		<table border="1"><caption></caption>
 			<thead>
 				<tr>
-					<th>id</th>
-					<th>ownerId</th>
-					<th>location</th>
-					<th>contactNumber</th>
-					<th>address</th>
-					<th>assetdate</th>
-					<th>status</th>
-					<th>price</th>
-					<th>length</th>
-					<th>breadth</th>
-					<th>squareFeet</th>
-					<th>surveyNumber</th>
-					<th>pattaNumber</th>
-					<th>approvedType</th>
-					<th>facing</th>
-					<th>assestType</th>
-					<th>Asset</th>
-					<th>user</th>
-					<th>PG</th>
-					<th>Appartment</th>
-					<th>Payment</th>
+					<th scope="col">id</th>
+					<th scope="col">ownerId</th>
+					<th scope="col">location</th>
+					<th scope="col">contactNumber</th>
+					<th scope="col">address</th>
+					<th scope="col">assetdate</th>
+					<th scope="col">status</th>
+					<th scope="col">price</th>
+					<th scope="col">length</th>
+					<th scope="col">breadth</th>
+					<th scope="col">squareFeet</th>
+					<th scope="col">surveyNumber</th>
+					<th scope="col">pattaNumber</th>
+					<th scope="col">approvedType</th>
+					<th scope="col">facing</th>
+					<th scope="col">assestType</th>
+					<th scope="col">Asset</th>
+					<th scope="col">user</th>
+					<th scope="col">PG</th>
+					<th scope="col">Appartment</th>
+					<th scope="col">Payment</th>
 				</tr>
 			</thead>
 			<tbody>

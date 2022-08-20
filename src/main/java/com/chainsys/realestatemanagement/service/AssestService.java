@@ -21,8 +21,7 @@ public class AssestService {
 private PaymentsRepository paymentrepo;
 
 	public List<Assest> getAssest() {
-		List<Assest> appart = assestrepo.findAll();
-		return appart;
+		return assestrepo.findAll();
 	}
 	
 
@@ -37,14 +36,12 @@ private PaymentsRepository paymentrepo;
 	
 	
 	public List<Assest> findByLocation(String location) {
-		List<Assest> assetDtls = assestrepo.findByLocation(location);
-		return assetDtls;
+		return assestrepo.findByLocation(location);
 	}
 	
 	public List<Assest> findByusersId(int id)
 	{
-		List<Assest> assetUserId=assestrepo.findByusersId(id);
-		return assetUserId;
+		return assestrepo.findByusersId(id);
 	}
 
 	

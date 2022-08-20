@@ -10,18 +10,18 @@
 </head>
 <body>
 <div id="table root">
-<table>
+<table><caption></caption>
 <thead>
 <tr>
-<th>usersId</th>
-<th>usersName</th>
-<th>passwords</th>
-<th>roles</th>
-<th>gender</th>
-<th>emailId</th>
-<th>address</th>
-<th>phoneno</th>
-<th>dates</th>
+<th scope="col">usersId</th>
+<th scope="col">usersName</th>
+<th scope="col">passwords</th>
+<th scope="col">roles</th>
+<th scope="col">gender</th>
+<th scope="col">emailId</th>
+<th scope="col">address</th>
+<th scope="col">phoneno</th>
+<th scope="col">dates</th>
 </tr>
 </thead>
 <tbody>

@@ -24,26 +24,26 @@ th:nth-child(even),td:nth-child(even) {
 </head>
 <body>
 	<div id="table root">
-		<table border="1">
+		<table border="1"><caption></caption>
 			<thead>
 				<tr>
-					<th>id</th>
-					<th>image</th>
-					<th>ownerId</th>
-					<th>location</th>
-					<th>contactNumber</th>
-					<th>address</th>
-					<th>assetdate</th>
-					<th>status</th>
-					<th>price</th>
-					<th>length</th>
-					<th>breadth</th>
-					<th>squareFeet</th>
-					<th>surveyNumber</th>
-					<th>pattaNumber</th>
-					<th>approvedType</th>
-					<th>facing</th>
-					<th>assestType</th>
+					<th scope="col">id</th>
+					<th scope="col">image</th>
+					<th scope="col">ownerId</th>
+					<th scope="col">location</th>
+					<th scope="col">contactNumber</th>
+					<th scope="col">address</th>
+					<th scope="col">assetdate</th>
+					<th scope="col">status</th>
+					<th scope="col">price</th>
+					<th scope="col">length</th>
+					<th scope="col">breadth</th>
+					<th scope="col">squareFeet</th>
+					<th scope="col">surveyNumber</th>
+					<th scope="col">pattaNumber</th>
+					<th scope="col">approvedType</th>
+					<th scope="col">facing</th>
+					<th scope="col">assestType</th>
 				</tr>
 			</thead>
 			<tbody>

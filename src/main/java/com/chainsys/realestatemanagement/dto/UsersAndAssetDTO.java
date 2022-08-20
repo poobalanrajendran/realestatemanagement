@@ -11,13 +11,13 @@ import com.chainsys.realestatemanagement.model.Users;
 public class UsersAndAssetDTO {
 	@Autowired
 	private Users user;
-	private List<Assest> Assestlist = new ArrayList<Assest>();
+	private List<Assest> assestList = new ArrayList<>();
 	
 	public List<Assest> getAssestlist() {
-		return Assestlist;
+		return assestList;
 	}
 	public void addUsersAndAssest(Assest assest) {
-	Assestlist.add(assest)	;
+	assestList.add(assest)	;
 	}
 	public Users getUser() {
 		return user;

@@ -14,7 +14,7 @@
     <body> <br>
       <div class="card">
       <div style="border-radius:200px; height:200px; width:200px; background: #F8FAF5; margin:0 auto;">
-        <i class="checkmark">✓</i>
+        <em class="checkmark">✓</em>
       </div>
         <h1>Congratulations Your Payment Successfully Completed</h1>
         <p>We have received your payment!<br>Thank You </p>

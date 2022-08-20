@@ -100,14 +100,14 @@ table, th, td {
 	</div>
 	</div>
 	<div id="loan details">
-		<table>
+		<table><caption></caption>
 			<thead>
 				<tr>
-					<th>User ID</th>
-					<th>Loan ID</th>
-					<th>EMI Date</th>
-					<th>Payment Amount</th>
-					<th>Payment ID</th>
+					<th scope="col">User ID</th>
+					<th scope="col">Loan ID</th>
+					<th scope="col">EMI Date</th>
+					<th scope="col">Payment Amount</th>
+					<th scope="col">Payment ID</th>
 				</tr>
 			</thead>
 			<tbody>

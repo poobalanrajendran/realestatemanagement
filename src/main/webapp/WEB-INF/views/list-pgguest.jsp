@@ -11,17 +11,17 @@
 </head>
 <body>
 <div id="table root">
-<table>
+<table><caption></caption>
 <thead>
 <tr>
-<th>pgId</th>
-<th>rent</th>
-<th>foodFacility</th>
-<th>acNonac</th>
-<th>advance</th>
-<th>lift</th>
-<th>floor</th>
-<th>pgType</th>
+<th scope="col">pgId</th>
+<th scope="col">rent</th>
+<th scope="col">foodFacility</th>
+<th scope="col">acNonac</th>
+<th scope="col">advance</th>
+<th scope="col">lift</th>
+<th scope="col">floor</th>
+<th scope="col">pgType</th>
 </tr>
 </thead>
 <tbody>

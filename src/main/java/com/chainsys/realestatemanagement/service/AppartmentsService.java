@@ -15,8 +15,7 @@ public class AppartmentsService {
 
 	public List<Appartments> getappart()
 	{
-		List< Appartments>appart=appobj.findAll();
-		return appart;
+		return appobj.findAll();
 	}
 	
 

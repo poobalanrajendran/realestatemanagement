@@ -15,8 +15,7 @@ public class PaymentService {
 private PaymentsRepository paymentRepo;
 public List<Payments> getpayment()
 {
-	List<Payments>listPay=paymentRepo.findAll();
-	return listPay;
+	return paymentRepo.findAll();
 }
 @Transactional
 
@@ -35,7 +34,6 @@ public void deleteById(long id)
 }
 public List<Payments> getTransactionDetails(int buyerAssestid)
 {
-	List<Payments>listPayment=paymentRepo.findByBuyerAssestid(buyerAssestid);
-	return listPayment;
+	return paymentRepo.findByBuyerAssestid(buyerAssestid);
 }
 }

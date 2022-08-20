@@ -195,7 +195,7 @@ button {
 		<form action="/home/userpage" method="post" modelAttribute="signIn">
 			<header>
 				<img
-					src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVYq5SvPw9gYATcRgyhZWVpqHltZL29dydAg&usqp=CAU">
+					src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVYq5SvPw9gYATcRgyhZWVpqHltZL29dydAg&usqp=CAU" alt="">
 			</header>
 
 			<div class="inputs">

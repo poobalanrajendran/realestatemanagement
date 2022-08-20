@@ -15,8 +15,7 @@ public class PayingGuestService {
 
 	public List<PayingGuest> getpaying()
 	{
-		List< PayingGuest>appart= payingguest.findAll();
-		return appart;
+		return payingguest.findAll();
 	}
 
 		public PayingGuest save(PayingGuest pay)

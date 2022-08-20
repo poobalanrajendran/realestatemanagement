@@ -36,7 +36,7 @@
         <br>
         A professional property manager will manage all aspects of their clients’ properties, from screening prospective tenants to collecting rent. They handle all the maintenance requests from the tenant and will hire the appropriate service to repair any issues. A property management company will even take care of evictions and filing any paperwork associated with it or other government programs. Think of real estate property management as a one-stop shop for all of your landlord needs.
        
-        <img class="About-img" src="https://thumbs.dreamstime.com/z/modern-real-estate-house-building-city-construction-concept-evening-outdoor-urban-view-homes-40083842.jpg" style="width:100%">
+        <img class="About-img" src="https://thumbs.dreamstime.com/z/modern-real-estate-house-building-city-construction-concept-evening-outdoor-urban-view-homes-40083842.jpg" alt="" style="width:100%">
     </div>
     </div>
 </body>

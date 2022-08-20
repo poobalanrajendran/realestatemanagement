@@ -23,15 +23,13 @@ public class UserService {
 	
 	public List<Users> getuser()
 		{
-			List<Users>listuser =userrepo.findAll();
-			return listuser;
+			return userrepo.findAll();
 	}
 	
 	public Users getByUserName(String userName)
 	{
 		
-		Users userdtls =userrepo.findByUsersName(userName);
-		return userdtls;
+		return userrepo.findByUsersName(userName);
 	}
 		
 	public Users save(Users user)
@@ -64,7 +62,7 @@ public class UserService {
 		Iterator<Assest> itr = assestlist.iterator();
 		while(itr.hasNext())
 		{
-			dto.addUsersAndAssest((Assest)itr.next());
+			dto.addUsersAndAssest(itr.next());
 		}
 		return dto;		
 }

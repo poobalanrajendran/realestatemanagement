@@ -10,14 +10,14 @@
 </head>
 <body>
 <div id="table root">
-<table>
+<table><caption></caption>
 <thead>
 <tr>
-<th>Invoice</th>
-<th>assestNumber</th>
-<th>buyerAssestid</th>
-<th>assetdate</th>
-<th>amount</th>
+<th scope="col">Invoice</th>
+<th scope="col">assestNumber</th>
+<th scope="col">buyerAssestid</th>
+<th scope="col">assetdate</th>
+<th scope="col">amount</th>
 
 </tr>
 </thead>
