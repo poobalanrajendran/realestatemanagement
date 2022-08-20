@@ -38,28 +38,16 @@ public class PaymentsController {
 @PostMapping("addpaymentform")
 public String addNewLand(@ModelAttribute("addpay") Payments thePay,Model model)
 {
-	System.out.println("asset payment details......");
+	
 	paymentService.save(thePay);
-	System.out.println("asset buyer......"+thePay.getId());
-	Assest asset =null;// = new Assest();
+	
+	Assest asset =null;
 	asset = assestService.findById(thePay.getId());
 	asset.setStatus("Sold");
 	assestService.save(asset);
-	System.out.println("asset id......"+asset.getId());
 	
-	//
-	/*Payments obj=new Payments();
-	obj.setInvoice(obj.getInvoice());
-	obj.setBuyerAssestid(obj.getBuyerAssestid());
-	obj.setId(obj.getId());
-	obj.setAmount(obj.getAmount());
-	obj.setAssetdate(obj.getAssetdate());
-	obj.setCardNumber(obj.getCardNumber());
-	obj.setCvvNumber(obj.getCvvNumber());
-	obj.setNameHolder(obj.getNameHolder());
-	obj.setExpireMonth(obj.getExpireMonth());
-	obj.setExpireYear(obj.getExpireYear());
-	paymentService.save(obj);*/
+	
+
 	
 	return "sucessPayment";
 }

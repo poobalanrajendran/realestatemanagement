@@ -10,7 +10,7 @@ public interface AssestRepository extends CrudRepository< Assest,Integer> {
 	Assest findById(int id);
 		
 	Assest save( Assest assest);
-	// used for adding a new customer and modifying the existing customer
+	
 	void deleteById(int id);
 	List< Assest> findAll();
 	List<Assest> findByusersId(int id);

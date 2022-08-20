@@ -18,7 +18,6 @@ public class PayingGuestService {
 		List< PayingGuest>appart= payingguest.findAll();
 		return appart;
 	}
-	//@Transactional
 
 		public PayingGuest save(PayingGuest pay)
 		{
@@ -28,7 +27,6 @@ public class PayingGuestService {
 	{
 		return  payingguest.findById(id);
 	}
-	//@Transactional
 	public void deleteById(int id)
 	{
 		 payingguest.deleteById(id);

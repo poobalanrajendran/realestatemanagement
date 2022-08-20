@@ -24,7 +24,7 @@ private PaymentsRepository paymentrepo;
 		List<Assest> appart = assestrepo.findAll();
 		return appart;
 	}
-	// @Transactional
+	
 
 	public Assest save(Assest app) {
 		return assestrepo.save(app);
@@ -47,7 +47,7 @@ private PaymentsRepository paymentrepo;
 		return assetUserId;
 	}
 
-	// @Transactional
+	
 	public void deleteById(int id) {
 		assestrepo.deleteById(id);
 	}
@@ -61,28 +61,7 @@ private PaymentsRepository paymentrepo;
 	dto.setPayments(payments);
 	return dto;
 	}
-	/*public AssetAndPaymentDTO getAssetByLocation(String location)
-	{
-	Assest assest=find(id);
-	AssetAndPaymentDTO dto=new AssetAndPaymentDTO();
-	dto.setAssest(assest);
-	Payments payments=paymentrepo.findByLocation(location);
-	dto.setPayments(payments);
-	return dto;
-	}*/
-	public byte[] getPostImageByteArray(int id) {
-		Assest post = assestrepo.findById(id);
-		byte[] imageBytes = null;
-			
-			if(post != null)
-			{
-				imageBytes = post.getImage();
-			}
-			else
-			{	
-				System.out.println("debug:" + this.getClass().getName() + " image is null " + id);
-			}	
-		return imageBytes;
-	}
+	
+	
 
 }

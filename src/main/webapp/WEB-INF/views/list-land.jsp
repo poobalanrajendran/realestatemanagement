@@ -28,6 +28,7 @@ th:nth-child(even),td:nth-child(even) {
 			<thead>
 				<tr>
 					<th>id</th>
+					<th>image</th>
 					<th>ownerId</th>
 					<th>location</th>
 					<th>contactNumber</th>
@@ -43,14 +44,17 @@ th:nth-child(even),td:nth-child(even) {
 					<th>approvedType</th>
 					<th>facing</th>
 					<th>assestType</th>
-					<th>image</th>
 				</tr>
 			</thead>
 			<tbody>
 				<c:forEach var="lan" items="${alllands}">
 					
 						<td>${lan.id}</td>
+						
 						<td>${lan.usersId}</td>
+						<td><img
+                            src="file://C:/Users/poob3127/eclipse-workspace/realestatemanagement/src/main/resources/Images/${lan.image}"
+                            alt="image" width="100" height="100"></td>
 						<td>${lan.location}</td>
 						<td>${lan.contactNumber}</td>
 						<td>${lan.address}</td>
@@ -65,9 +69,6 @@ th:nth-child(even),td:nth-child(even) {
 						<td>${lan.approvedType}</td>
 						<td>${lan.facing}</td>
 						<td>${lan.assestType}</td>
-						<td>${lan.image} <img width="100" height="100" src="getimage?id=${image.id}" alt="image"></td>
-						
-
 					</tr>
 				</c:forEach>
 			</tbody>

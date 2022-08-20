@@ -49,11 +49,9 @@ public class UsersController {
 	@PostMapping("/updateuser")
 	public String updateuser(@ModelAttribute("updateuser") Users userid) {
 		userService.save(userid);
-		//return "redirect:/users/userslist";
+		
 		return "update-users-form";
-		//return "index1";
-		//return "redirect:/users/findusersbyid";
-		//return null;
+		
 
 	}
 
@@ -67,7 +65,7 @@ public class UsersController {
 	public String finduserById(@RequestParam("userid") int id, Model model) {
 		Users theuser = userService.findById(id);
 		model.addAttribute("finduserid", theuser);
-		//return "find-user-id-form";
+		
 		return "list-land";
 	}
 
@@ -81,9 +79,9 @@ public class UsersController {
 	
 	@GetMapping("/getuserassests")
     public String getDetail(@RequestParam("id") int id,Model model) {
-		UsersAndAssetDTO dto =userService.getUsersAndAssetDetail(id);//getBloodGroupPersonDetail(id);
-        model.addAttribute("userslist" ,dto.getUser());//.getBloodgroup());
-        model.addAttribute("assetlist",dto.getAssestlist());//.getPersonlist());
+		UsersAndAssetDTO dto =userService.getUsersAndAssetDetail(id);
+        model.addAttribute("userslist" ,dto.getUser());
+        model.addAttribute("assetlist",dto.getAssestlist());
         return "list-userdetails-assest-byid";
     }
 	
@@ -97,25 +95,6 @@ public String loginForm(Model model)
 }
 
 
-@PostMapping("/validlogin")
-public String loginUser(@ModelAttribute("userlogin") Users user, Model model)
-{
-	model.addAttribute("userlogin", user);
-	Users userlist = userService.getByUserName(user.getUsersName());
-	System.out.println("userlist password"+userlist.getPasswords());
-	
-	if(!StringUtils.isEmpty(userlist.getPasswords()) &&
-			user.getPasswords().equals(user.getPasswords())) {
-		model.addAttribute("Testusers", userlist);
-		return "UserHome";
-	}else {
-		System.out.println("Invalid Users");
-		model.addAttribute("userInvalid", "Invalid User");
-	}
-	return "login";
-	
-		
-}
 
 @GetMapping("/deleteuserAdmin")
 public String deleteusers(@RequestParam("userid") int id) {

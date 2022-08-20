@@ -27,8 +27,8 @@ public class  LoginController {
     
     @PostMapping("/userpage")
     public String userPage(@ModelAttribute("signIn") Login login, Model model) {
-        Users userdetails = userservice.findById(login.getUsersId());
-        if (userdetails.getPasswords().equals(login.getPasswords())) 
+    	 Users userdetails = userservice.findByEmailId(login.getEmailId());
+        if (userdetails.getEmailId().equals(login.getEmailId())) 
         {
         	 model.addAttribute("roles", userdetails.getRoles());
         	 model.addAttribute("userId", userdetails.getUsersId());
@@ -37,7 +37,7 @@ public class  LoginController {
             model.addAttribute("message", "Somthing Wrong ");
             return "login";
         }
-}
+}   
     @GetMapping("/homepage")
     public String homepage()
     {
@@ -64,7 +64,5 @@ public class  LoginController {
     	return "about";
     }
     
-	/*
-	 * @PostMapping("/contactdetails") public String contact() { return "contact"; }
-	 */
+	
     }

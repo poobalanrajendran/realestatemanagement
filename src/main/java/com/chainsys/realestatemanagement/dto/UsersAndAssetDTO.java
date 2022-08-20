@@ -25,11 +25,6 @@ public class UsersAndAssetDTO {
 	public void setUser(Users user) {
 		this.user = user;
 	}
-//	public List<Assest> getPersonlist() {
-//		return personlist;
-//	}
-//	public void addUserAndAssetList(Assest person) {
-//		personlist.add(person);
-//	}
+
 	
 	}

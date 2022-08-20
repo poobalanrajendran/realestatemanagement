@@ -11,7 +11,7 @@ public interface PayingGuestRepository extends CrudRepository< PayingGuest,Integ
 	PayingGuest findById(int id);
 		
 	PayingGuest save( PayingGuest app);
-	// used for adding a new customer and modifying the existing customer
+	
 	void deleteById(int id);
 	List< PayingGuest> findAll();
 }

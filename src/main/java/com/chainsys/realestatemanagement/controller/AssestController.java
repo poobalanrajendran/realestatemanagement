@@ -1,11 +1,12 @@
 package com.chainsys.realestatemanagement.controller;
 
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +14,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.chainsys.realestatemanagement.dto.AssetAndPaymentDTO;
@@ -29,69 +29,59 @@ public class AssestController {
 	@Autowired
 	AssestService assestService;
 	@Autowired
-	 PayingGuestService pgService;
+	PayingGuestService pgService;
 	@Autowired
-	 AppartmentsService apptService;
+	AppartmentsService apptService;
 
+	public static String uploadDir = System.getProperty("user.dir") + "/src/main/resources/Images";
 
-	@GetMapping("/addform")  
+	@GetMapping("/addform")
 	public String showAddForm(Model model) {
 		Assest theAssest = new Assest();
 		model.addAttribute("addassest", theAssest);
 		return "add-addland-form";
-		// if(as.assestType="land")
 	}
-	
-	/*jayakumar
-	 * @GetMapping("/addform") public String showAddForm(Model model) {
-	 * AssetPayGuestAppartment assestDetails = new AssetPayGuestAppartment();
-	 * model.addAttribute("addassest", assestDetails); return "alltable"; //
-	 * if(as.assestType="land") }
-	 */
-	
+
 	@PostMapping("addasset")
-	public String addNewLand(@ModelAttribute("addasset") Assest theassest, @RequestParam("photo") MultipartFile photo, Model model) {
-		try {
-			System.out.println(photo.getBytes().length);
-		} catch (IOException e) {
-			e.printStackTrace();
+	public String addNewLand(@ModelAttribute("addasset") Assest theassest, Model model,
+			@RequestParam("assetImage") MultipartFile file, @RequestParam("imgName") String imgName)
+			throws IOException {
+
+		theassest.setAddress(theassest.getAddress());
+		theassest.setApprovedType(theassest.getApprovedType());
+		theassest.setAssestType(theassest.getAssestType());
+		theassest.setAssetdate(theassest.getAssetdate());
+		theassest.setBreadth(theassest.getBreadth());
+		theassest.setContactNumber(theassest.getContactNumber());
+		theassest.setFacing(theassest.getFacing());
+		theassest.setId(theassest.getId());
+		theassest.setLength(theassest.getLength());
+		theassest.setLocation(theassest.getLocation());
+		theassest.setPattaNumber(theassest.getPattaNumber());
+		theassest.setPrice(theassest.getPrice());
+		theassest.setSquareFeet(theassest.getSquareFeet());
+		theassest.setStatus(theassest.getStatus());
+		theassest.setUsersId(theassest.getUsersId());
+		theassest.setSurveyNumber(theassest.getSurveyNumber());
+		String imageUUID;
+		if (!file.isEmpty()) {
+			imageUUID = file.getOriginalFilename();
+			Path fileAndPathName = Paths.get(uploadDir, imageUUID);
+			Files.write(fileAndPathName, file.getBytes());
+		} else {
+			imageUUID = imgName;
 		}
-		try {
-			theassest.setImage(photo.getBytes());
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		theassest.setImage(imageUUID);
 		assestService.save(theassest);
 		if (theassest.getAssestType().equals("PG")) {
-			return "redirect:/guest/pgform?id="+theassest.getId();
-		} 
-		else if(theassest.getAssestType().equals("Apartment"))
-		{
-			return "redirect:/appartments/appartmentsform?id="+theassest.getId();
-		}
-		else
+			return "redirect:/guest/pgform?id=" + theassest.getId();
+		} else if (theassest.getAssestType().equals("Apartment")) {
+			return "redirect:/appartments/appartmentsform?id=" + theassest.getId();
+		} else
 			return "redirect:/assest/landlist";
 
 	}
-	
-	/* jaya kumar
-	 * @PostMapping("addasset") public void addNewLand(@ModelAttribute("addasset")
-	 * AssetPayGuestAppartment assestDetails, Model model) {
-	 * System.out.println("calling sop asset"); Assest theAssest =
-	 * this.getAssetDetails(assestDetails); assestService.save(theAssest); if
-	 * (theAssest.getAssestType().equals("PG")) { PayingGuest objPG =
-	 * AssestController.getPGDetails(assestDetails); pgService.save(objPG); //return
-	 * "redirect:/guest/pgform?id="+theAssest.getId(); } else
-	 * if(theAssest.getAssestType().equals("Appartment")) { Appartments objAppt=
-	 * AssestController.getAppartmentDetails(assestDetails);
-	 * apptService.save(objAppt); //return
-	 * "redirect:/appartments/appartmentsform?id="+theAssest.getId(); } //else
-	 * //return "redirect:/assest/landlist";
-	 * 
-	 * }
-	 * 
-	 * 
-	 */
+
 	@GetMapping("/updateform")
 	public String updateLand(@RequestParam("id") int id, Model model) {
 		Assest theAssest = assestService.findById(id);
@@ -102,24 +92,22 @@ public class AssestController {
 	@PostMapping("updateland")
 	public String updateland(@ModelAttribute("updateland") Assest theAssest) {
 		assestService.save(theAssest);
-		
+
 		return "redirect:/assest/landlist";
 	}
 
 	@GetMapping("/deleteland")
-	public String deleteland(@RequestParam("id") int id,@RequestParam("assestType") String assestType) {
-		System.out.println(" asset id "+id);
-		System.out.println(" assestType "+assestType);
-		if("land".equalsIgnoreCase(assestType)) {
+	public String deleteland(@RequestParam("id") int id, @RequestParam("assestType") String assestType) {
+		if ("land".equalsIgnoreCase(assestType)) {
 			assestService.deleteById(id);
-		}else if("pg".equalsIgnoreCase(assestType)) {
+		} else if ("pg".equalsIgnoreCase(assestType)) {
 			pgService.deleteById(id);
 			assestService.deleteById(id);
-		}else if("apartment".equalsIgnoreCase(assestType)) {
+		} else if ("apartment".equalsIgnoreCase(assestType)) {
 			apptService.deleteById(id);
 			assestService.deleteById(id);
 		}
-		//assestService.deleteById(id);
+
 		return "redirect:/assest/getAllAsset";
 	}
 
@@ -137,81 +125,37 @@ public class AssestController {
 		model.addAttribute("alllands", landlist);
 		return "list-land";
 	}
-	
+
 	@GetMapping("/getassetpayments")
-	public String getAssetAndPayments(@RequestParam("id")int id, Model model)
-	{
+	public String getAssetAndPayments(@RequestParam("id") int id, Model model) {
 		AssetAndPaymentDTO dto = assestService.getAssetAndPayments(id);
 		model.addAttribute("getassetpayments", dto.getAssest());
-		model.addAttribute("getpayments",dto.getPayments());
+		model.addAttribute("getpayments", dto.getPayments());
 		return "list-asset-and-payments";
-		
+
 	}
-	
+
 	@GetMapping("/location")
 
-	public String getByLocation(@RequestParam("location")String location, Model model) {
+	public String getByLocation(@RequestParam("location") String location, Model model) {
 		List<Assest> byLocation = assestService.findByLocation(location);
 		model.addAttribute("alllands", byLocation);
 		return "list-location";
 	}
-	
+
 	@GetMapping("/userid")
 
-	public String getByUserId(@RequestParam("userid")int usersId, Model model) {
+	public String getByUserId(@RequestParam("userid") int usersId, Model model) {
 		List<Assest> byuser = assestService.findByusersId(usersId);
 		model.addAttribute("alllands", byuser);
 		return "list-land";
 	}
-	
+
 	@GetMapping("/getAllAsset")
 	public String getAllassetDetails(Model model) {
 		List<Assest> landlist = assestService.getAssest();
 		model.addAttribute("allAsset", landlist);
 		return "list-landAdmin";
-	}	
-	
-	/*jaya kumar
-	 * public static Assest getAssetDetails(AssetPayGuestAppartment assestDetails) {
-	 * Assest obj = new Assest(); obj.setAddress(assestDetails.getAddress());
-	 * obj.setApprovedType(assestDetails.getAcNonac());
-	 * obj.setAssestType(assestDetails.getAssestType());
-	 * obj.setAssetdate(assestDetails.getAssetdate());
-	 * obj.setBreadth(assestDetails.getBreadth());
-	 * obj.setContactNumber(assestDetails.getContactNumber());
-	 * obj.setFacing(assestDetails.getFacing()); obj.setId(assestDetails.getId());
-	 * obj.setLength(assestDetails.getLength());
-	 * obj.setLocation(assestDetails.getLocation());
-	 * obj.setPattaNumber(assestDetails.getPattaNumber());
-	 * obj.setPrice(assestDetails.getPrice());
-	 * obj.setSquareFeet(assestDetails.getSquareFeet());
-	 * obj.setStatus(assestDetails.getStatus());
-	 * obj.setUsersId(assestDetails.getUsersId());
-	 * obj.setAssetdate(assestDetails.getAssetdate()); return obj; }
-	 * 
-	 * public static PayingGuest getPGDetails(AssetPayGuestAppartment assestDetails)
-	 * { PayingGuest objPG = new PayingGuest();
-	 * objPG.setAcNonac(assestDetails.getAcNonac());
-	 * objPG.setAdvance(assestDetails.getAdvance());
-	 * objPG.setFloor(assestDetails.getFloor());
-	 * objPG.setFoodFacility(assestDetails.getFoodFacility());
-	 * objPG.setLift(assestDetails.getLift());
-	 * objPG.setPgId(assestDetails.getPgId());
-	 * objPG.setPgType(assestDetails.getPgType());
-	 * objPG.setRent(assestDetails.getRent()); return objPG; } public static
-	 * Appartments getAppartmentDetails(AssetPayGuestAppartment assestDetails) {
-	 * Appartments objAppt = new Appartments();
-	 * objAppt.setAppartmentId(assestDetails.getAppartmentId());
-	 * objAppt.setFloor(assestDetails.getFloor());
-	 * objAppt.setLift(assestDetails.getLift());
-	 * objAppt.setSecurity(assestDetails.getSecurity()); return objAppt; }
-	 */
-
-@ResponseBody
-	@GetMapping("/getimage")
-	public ResponseEntity<byte[]> getImage(@RequestParam("id") int id) {
-		byte[] imageBytes = assestService.getPostImageByteArray(id);
-		return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(imageBytes);
 	}
-	
+
 }

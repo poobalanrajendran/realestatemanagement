@@ -17,7 +17,7 @@ import com.chainsys.realestatemanagement.model.Users;
 public class UserService {
 
 	@Autowired
-	private UsersRepository userrepo;//
+	private UsersRepository userrepo;
 	@Autowired
 	private AssestRepository assestrepository;
 	
@@ -29,11 +29,11 @@ public class UserService {
 	
 	public Users getByUserName(String userName)
 	{
-		System.out.println("userName ....."+userName);
+		
 		Users userdtls =userrepo.findByUsersName(userName);
 		return userdtls;
 	}
-		//@Transactional
+		
 	public Users save(Users user)
 	{
 		return userrepo.save(user);
@@ -42,6 +42,12 @@ public class UserService {
 	{
 		return userrepo.findById(id);
 	}
+	
+	public Users findByEmailId(String emailId)
+	{
+		return userrepo.findByEmailId(emailId);
+	}
+	
 	@Transactional
 
 	public void deleteById(int id)
@@ -53,8 +59,8 @@ public class UserService {
 	{
 		Users user=findById(id);
 		UsersAndAssetDTO dto= new UsersAndAssetDTO();
-		dto.setUser(user);//setBloodgroup(bloodGroup);
-		List<Assest> assestlist=assestrepository.findByusersId(id);//.findByBloodGroupId(id); // method created in repo in FK
+		dto.setUser(user);
+		List<Assest> assestlist=assestrepository.findByusersId(id);
 		Iterator<Assest> itr = assestlist.iterator();
 		while(itr.hasNext())
 		{

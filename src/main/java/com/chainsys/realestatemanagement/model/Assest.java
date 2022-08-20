@@ -21,23 +21,17 @@ public class Assest {
 	@Column(name = "owner_id")
 	private int usersId;
 	@Column(name="post")
-	private byte[] image;
-	public byte[] getImage() {
+	private String image;
+	
+
+public String getImage() {
 		return image;
 	}
 
-	public void setImage(byte[] image) {
+	public void setImage(String image) {
 		this.image = image;
 	}
 
-//private int ownerId;
-//	public int getOwnerId() {
-//		return ownerId;
-//	}
-//
-//	public void setOwnerId(int ownerId) {
-//		this.ownerId = ownerId;
-//	}
 @OneToOne(mappedBy="paymentDetail",fetch=FetchType.LAZY)
 private Payments paymentDetail;
 
@@ -80,7 +74,7 @@ public void setPaymentDetail(Payments paymentDetail) {
 	
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="owner_id",nullable =false,insertable =false,updatable =false)
-	private Users users; // pk class
+	private Users users;
 	
 	
 	public Users getUser() {
@@ -129,12 +123,7 @@ public void setPaymentDetail(Payments paymentDetail) {
 		this.address = address;
 	}
 
-//public Date getDate() {
-//	return date;
-//}
-//public void setDate(Date date) {
-//	this.date = date;
-//}
+
 	public Date getAssetdate() {
 		return assetdate;
 	}

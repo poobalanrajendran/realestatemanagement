@@ -18,7 +18,7 @@ public class AppartmentsService {
 		List< Appartments>appart=appobj.findAll();
 		return appart;
 	}
-	//@Transactional
+	
 
 		public Appartments save(Appartments app)
 		{
@@ -28,7 +28,7 @@ public class AppartmentsService {
 	{
 		return appobj.findById(id);
 	}
-	//@Transactional
+	
 	public void deleteById(int id)
 	{
 		appobj.deleteById(id);

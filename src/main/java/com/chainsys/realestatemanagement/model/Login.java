@@ -3,6 +3,9 @@ package com.chainsys.realestatemanagement.model;
 public class Login {
 private int usersId;
 private String roles ;
+private String passwords;
+private String emailId;
+
 public String getPasswords() {
 	return passwords;
 }
@@ -21,5 +24,15 @@ public String getRoles() {
 public void setRoles(String roles) {
 	this.roles = roles;
 }
-private String passwords;
+public String getEmailId() {
+	return emailId;
+}
+public void setEmailId(String emailId) {
+	this.emailId = emailId;
+}
+
+
+
+
+
 }

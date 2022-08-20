@@ -25,7 +25,7 @@ function display()
 			<form:form action="addappart" method="post" modelAttribute="addapparts">
 			<h1>Apartment</h1>
 				<div>
-					<label for="appartmentId">Appartment Id </label>
+					<label for="appartmentId">Apartment Id </label>
 					<div>
 						<form:input path="appartmentId" pattern="[0-9]{4}" required="true"/>
 					</div>
@@ -48,7 +48,7 @@ function display()
 				</div>
 				<br>
 				<div>
-					<label for="lift">Appartment Lift </label>
+					<label for="lift">Apartment Lift </label>
 					<div>
 						<form:input path="lift" title="Name can't be empty"
 							pattern="^[A-Za-z]\\w{3,20$" required="true"/>
