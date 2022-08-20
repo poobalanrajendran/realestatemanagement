@@ -4,7 +4,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <title>Login App</title>
 <link rel="stylesheet" type="text/css" href="jslogin.css">

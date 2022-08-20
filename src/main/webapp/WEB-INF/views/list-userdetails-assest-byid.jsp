@@ -3,10 +3,10 @@
 	<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
-<title>User Details & Loan EMI Details Tables</title>
+<title>sucess</title>
 <style>
 h1, h2, h3 {
 	text-align: center;
@@ -61,7 +61,7 @@ table, th, td {
 				<div>
 					<form:input path="emailId" />
 				</div>
-		</div>
+		
 		<br>
 		<div>
 			<label for="address">address </label>
@@ -94,8 +94,10 @@ table, th, td {
 			Others
 		</div>
 		<br>
-	</div>
+	
 	</form:form>
+	
+	</div>
 	</div>
 	<div id="loan details">
 		<table>

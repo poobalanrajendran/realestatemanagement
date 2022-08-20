@@ -15,6 +15,5 @@ public interface AssestRepository extends CrudRepository< Assest,Integer> {
 	List< Assest> findAll();
 	List<Assest> findByusersId(int id);
 	List<Assest> findByLocation(String location);
-	//List<Assest> findByusersId(int id);
 
 }

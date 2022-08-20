@@ -3,7 +3,7 @@
     <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
         <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>addappart</title>
@@ -13,7 +13,7 @@
 <div id="form">
 <form:form action="updateappart" method="post" modelAttribute="updateland">
 <div>
-       <label for="appartmentId">Appartment Id </label>
+       <label for="appartmentId">Apartment Id </label>
        <div >
         <form:input type="number" path="appartmentId"/>
        </div>
@@ -36,14 +36,14 @@
       </div>
       <br>
       <div>
-      <label for="lift">Appartment Lift </label>
+      <label for="lift">Apartment Lift </label>
 					<div>
 						<form:input path="lift" title="Name can't be empty"
 							pattern="^[A-Za-z]\\w{3,20$" required="true"/>
        </div>
       </div>
       <br>
-      </div>
+    
       <br>
       <div>
 
@@ -51,5 +51,6 @@
 				</div>
 </form:form>
 </div>
+  </div>
 </body>
 </html>

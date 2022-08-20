@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.chainsys.realestatemanagement.model.Appartments;
 import com.chainsys.realestatemanagement.model.PayingGuest;
 
 public interface PayingGuestRepository extends CrudRepository< PayingGuest,Integer> {

@@ -13,8 +13,7 @@
   
    
    
-      <!--  <link rel="stylesheet" href="../WEB-INF/views/css/index.css"> -->
-<%--     <%@include file ="../WEB-INF/views/css/index.css"%> --%>
+
   <style>
     *{
   padding: 0%;
@@ -238,12 +237,7 @@
     </div> 
     <!--  -->
  <form:form action="" method="get" modelAttribute="space">
-    <div class="w3-content-width w3-sections">
-       <!-- <img class="mySlides" src="file:///C:/Users/poob3127/eclipse-workspace/realestatemanagement/src/main/webapp/WEB-INF/views/images/Appartment.jpg" style="width:100%">
-      <img class="mySlides" src="images/Land.jpg" style="width:100%">
-      <img class="mySlides" src="images/PG.jpg" style="width:100%">
-      <img class="mySlides" src="images/Real Estate.jpg" style="width:100%">  -->
-            <img class="mySlides" src="https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/114347839/original/447210417fa6ce483544c53f57e611956f9b00b2.jpg" style="width:100%">
+               <img class="mySlides" src="https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/114347839/original/447210417fa6ce483544c53f57e611956f9b00b2.jpg" style="width:100%">
             <img class="mySlides" src="https://thinkrealty.com/wp-content/uploads/2020/09/iStock-840206042-rgb.jpg" style="width:100%">
             <img class="mySlides" src="https://thumbs.dreamstime.com/z/modern-real-estate-house-building-city-construction-concept-evening-outdoor-urban-view-homes-40083842.jpg" style="width:100%">
             <img class="mySlides" src="https://5.imimg.com/data5/OU/ED/MY-44651033/paying-guest-renting-solutions-500x500.jpg" style="width:100%">

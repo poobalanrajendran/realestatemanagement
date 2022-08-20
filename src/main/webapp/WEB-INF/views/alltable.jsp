@@ -103,10 +103,8 @@
 					</div>
 				</div>
 				<br>
-				<!-- <div>
+
 					<label for="approvedType">ApprovedType </label> -->
-					<!-- <div> -->
-						<%-- <form:input path="approvedType" /> --%>
 						<div>
 						ApprovedType:
 						<form:radiobutton path="approvedType" value="C.M.D.A"/>

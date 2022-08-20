@@ -3,7 +3,7 @@
     <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
         <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html>
+<html  lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>update PG</title>
@@ -65,13 +65,14 @@
         <form:input path ="floor" title="Name can't be empty"
 						pattern="^[A-Za-z]\\w{1,20}$" required ="true"/>
        </div>
-      </div>
+    
   <br>
        
       
 <form:button>update</form:button>
-</div>
+
 </form:form>
 </div>
+  </div>
 </body>
 </html>

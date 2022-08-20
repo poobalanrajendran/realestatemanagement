@@ -3,7 +3,7 @@
     <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
         <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>addland</title>
@@ -83,6 +83,7 @@
 						<form:input path="approvedType" />
 					</div>
 				</div> --%>
+				<div>
 				ApprovedType:
 						<form:radiobutton path="approvedType" value="C.M.D.A"/>
 					C.M.D.A
@@ -140,7 +141,7 @@
 				<div>
 
 					<form:button>Update</form:button>
-				</div>
+			</div>
 			</form:form>
 		</div>
 	</div>

@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chainsys.realestatemanagement.model.Assest;
-//import com.chainsys.realestatemanagement.model.Assest;
 import com.chainsys.realestatemanagement.model.Payments;
 import com.chainsys.realestatemanagement.service.AssestService;
 import com.chainsys.realestatemanagement.service.PaymentService;

@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.chainsys.realestatemanagement.model.Appartments;
 import com.chainsys.realestatemanagement.model.PayingGuest;
 import com.chainsys.realestatemanagement.service.PayingGuestService;
 
