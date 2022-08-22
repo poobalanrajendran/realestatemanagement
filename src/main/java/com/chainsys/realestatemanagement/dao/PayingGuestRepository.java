@@ -13,4 +13,5 @@ public interface PayingGuestRepository extends CrudRepository< PayingGuest,Integ
 	
 	void deleteById(int id);
 	List< PayingGuest> findAll();
+
 }

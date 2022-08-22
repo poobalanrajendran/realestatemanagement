@@ -5,20 +5,35 @@
 <!DOCTYPE html>
 <html lang="En">
   <head>
-  <title>Payment</title>
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,900&display=swap" rel="stylesheet">
+  <title>Payment Successfully</title>
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
   </head>
 <style type="text/css">
-<%@include file="css/successfulPayment.css"%>
+<%@include file="/WEB-INF/views/css/successfulPayment.css"%>
 </style>
-    <body> <br>
-      <div class="card">
-      <div style="border-radius:200px; height:200px; width:200px; background: #F8FAF5; margin:0 auto;">
-        <em class="checkmark">✓</em>
+    <body> 
+    <br>
+    <br>
+    <br>
+   <div class="container">
+   <div class="row">
+      <div class="col-md-6 mx-auto mt-5">
+         <div class="payment">
+            <div class="payment_header">
+               <div class="check"><i class="fa fa-check" aria-hidden="true"></i></div>
+            </div>
+            <div class="content">
+               <h1>Payment Success !</h1>
+                <p>We have received your payment!<br>Thank you for being a valued Student of Madurai Government Arts College;<br/> we'll be in touch shortly!</p>
+       
+               <a href="/home/page">Go to Home</a>
+               <!-- <a href="/user/addform">Login In</a> -->
+            </div>
+            
+         </div>
       </div>
-        <h1>Congratulations Your Payment Successfully Completed</h1>
-        <p>We have received your payment!<br>Thank You </p>
-        <a href="index1">HomePage</a>
-      </div>
+   </div>
+</div>
     </body>
-</html>
+</html>	
