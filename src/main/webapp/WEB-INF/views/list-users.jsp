@@ -7,10 +7,18 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>User List</title>
+<link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+ <%@include file="css/alluser.css"%>
+    
+    </style>
 </head>
 <body>
+<br>
+<h1>AllUser</h1>
 <div id="table root">
-<table><caption></caption>
+<table class="table"><caption></caption>
 <thead>
 <tr>
 <th scope="col">usersId</th>

@@ -7,17 +7,25 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>User List</title>
+<link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+ <%@include file="css/allpayment.css"%>
+    
+    </style>
 </head>
 <body>
-<div id="table root">
-<table><caption></caption>
+<br>
+<h1>Transaction</h1>
+<div>
+<table class="table"><caption></caption>
 <thead>
 <tr>
 <th scope="col">Invoice</th>
-<th scope="col">assestNumber</th>
-<th scope="col">buyerAssestid</th>
-<th scope="col">assetdate</th>
-<th scope="col">amount</th>
+<th scope="col">AssestNumber</th>
+<th scope="col">BuyerAssestId</th>
+<th scope="col">AssetDate</th>
+<th scope="col">Amount</th>
 
 </tr>
 </thead>

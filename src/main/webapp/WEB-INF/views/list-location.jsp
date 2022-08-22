@@ -30,7 +30,7 @@ th:nth-child(even),td:nth-child(even) {
 			<thead>
 				<tr>
 					<th>id</th>
-					<th>image</th>
+					
 					<th>UserId</th>
 					
 					<th>location</th>
@@ -52,13 +52,10 @@ th:nth-child(even),td:nth-child(even) {
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="lan" items="${alllands}">
+				<c:forEach var="lan" items="${allproperty}">
 					<tr>
 						<td>${lan.id}</td>
-						<td><img
-                            src="file://C:/Users/poob3127/eclipse-workspace/realestatemanagement/src/main/resources/Images/${lan.image}"
-                            alt="image" width="100" height="100"></td>
-						<td>${lan.usersId}</td>
+												<td>${lan.usersId}</td>
 						<td>${lan.location}</td>
 						<td>${lan.contactNumber}</td>
 						<td>${lan.address}</td>
@@ -73,6 +70,10 @@ th:nth-child(even),td:nth-child(even) {
 						<td>${lan.approvedType}</td>
 						<td>${lan.facing}</td>
 						<td>${lan.assestType}</td>
+						<td><img
+                            src="file://C:/Users/poob3127/eclipse-workspace/realestatemanagement/src/main/resources/Images/${lan.image}"
+                            alt="image" width="100" height="100"></td>
+						
 						
 						<td><button ${lan.status eq 'Sold'  ? 'disabled="disabled"' : ''}  class ="btn" onclick="window.location.href='/payment/paymentform'">Buy</button></td>
 				</tr>

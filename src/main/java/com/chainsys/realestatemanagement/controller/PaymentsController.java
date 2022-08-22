@@ -52,6 +52,7 @@ public String addNewLand(@ModelAttribute("addpay") Payments thePay,Model model)
 }
 @GetMapping("/updateform")
 public String updatepayment(@RequestParam("id") long id, Model model) {
+	
 	Payments thePay = paymentService.findById(id);
 	model.addAttribute("updateland", thePay);
 	return "update-payments-form";

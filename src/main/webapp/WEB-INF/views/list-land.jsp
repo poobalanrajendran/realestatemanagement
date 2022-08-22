@@ -9,52 +9,44 @@
 <meta charset="ISO-8859-1">
 <title>User List</title>
 <style type="text/css">
-tr:hover {background-color: #ECF32D;}
-table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-tr:nth-child(even) {
-  background-color: rgba(140, 67, 212, 0.4);
-}
-th:nth-child(even),td:nth-child(even) {
-  background-color: rgba(300, 120, 130, 0.4);
-}
+ <%@include file="css/chennailocationtable.css"%>
 </style>
 </head>
 <body>
+<br>
+<h1>Asset</h1>
+<br>
 	<div id="table root">
-		<table border="1"><caption></caption>
+		<table id="alter" class="center"><caption></caption>
 			<thead>
 				<tr>
-					<th scope="col">id</th>
-					<th scope="col">image</th>
-					<th scope="col">ownerId</th>
-					<th scope="col">location</th>
-					<th scope="col">contactNumber</th>
-					<th scope="col">address</th>
-					<th scope="col">assetdate</th>
-					<th scope="col">status</th>
-					<th scope="col">price</th>
-					<th scope="col">length</th>
-					<th scope="col">breadth</th>
-					<th scope="col">squareFeet</th>
-					<th scope="col">surveyNumber</th>
-					<th scope="col">pattaNumber</th>
-					<th scope="col">approvedType</th>
-					<th scope="col">facing</th>
-					<th scope="col">assestType</th>
+					<th scope="col">AssetId</th>
+					
+					<th scope="col">UserID</th>
+					<th scope="col">Location</th>
+					<th scope="col">ContactNumber</th>
+					<th scope="col">Address</th>
+					<th scope="col">AssetDate</th>
+					<th scope="col">Status</th>
+					<th scope="col">Price</th>
+					<th scope="col">Length</th>
+					<th scope="col">Breadth</th>
+					<th scope="col">SquareFeet</th>
+					<th scope="col">SurveyNumber</th>
+					<th scope="col">PattaNumber</th>
+					<th scope="col">ApprovedType</th>
+					<th scope="col">Facing</th>
+					<th scope="col">AssestType</th>
+					<th scope="col">Image</th>
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="lan" items="${alllands}">
+				<c:forEach var="lan" items="${alldata}">
 					
 						<td>${lan.id}</td>
 						
 						<td>${lan.usersId}</td>
-						<td><img
-                            src="file://C:/Users/poob3127/eclipse-workspace/realestatemanagement/src/main/resources/Images/${lan.image}"
-                            alt="image" width="100" height="100"></td>
+						
 						<td>${lan.location}</td>
 						<td>${lan.contactNumber}</td>
 						<td>${lan.address}</td>
@@ -69,6 +61,9 @@ th:nth-child(even),td:nth-child(even) {
 						<td>${lan.approvedType}</td>
 						<td>${lan.facing}</td>
 						<td>${lan.assestType}</td>
+						<td><img
+                            src="file://C:/Users/poob3127/eclipse-workspace/realestatemanagement/src/main/resources/Images/${lan.image}"
+                            alt="image" width="100" height="100"></td>
 					</tr>
 				</c:forEach>
 			</tbody>

@@ -139,7 +139,7 @@ public class AssestController {
 
 	public String getByLocation(@RequestParam("location") String location, Model model) {
 		List<Assest> byLocation = assestService.findByLocation(location);
-		model.addAttribute("alllands", byLocation);
+		model.addAttribute("allproperty", byLocation);
 		return "list-location";
 	}
 
@@ -147,7 +147,7 @@ public class AssestController {
 
 	public String getByUserId(@RequestParam("userid") int usersId, Model model) {
 		List<Assest> byuser = assestService.findByusersId(usersId);
-		model.addAttribute("alllands", byuser);
+		model.addAttribute("alldata", byuser);
 		return "list-land";
 	}
 

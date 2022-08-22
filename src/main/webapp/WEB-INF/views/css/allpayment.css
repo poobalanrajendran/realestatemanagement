@@ -1,0 +1,22 @@
+
+div{ text-align:center;}
+
+tr:hover {background-color: #F7DC6F;}
+
+table{
+background-color:  #ffb3ff;
+}
+body {
+    background-image:
+        url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ699ZsCawbZg0HZ6K5sO3I-umuKxYrXL6W8Q&usqp=CAU");
+    height: 768px;
+    width: 1366px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+h1{
+	text-align: center;
+	color: white;
+}

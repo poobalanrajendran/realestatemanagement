@@ -8,33 +8,35 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>User List</title>
+<style>
+<%@include file="css/allasset.css"%>
+</style>
 </head>
 <body>
+<br>
+<h1>Asset</h1>
 	<div id="table root">
-		<table border="1"><caption></caption>
+		<table id="alter" class="center"><caption></caption>
 			<thead>
 				<tr>
-					<th scope="col">id</th>
-					<th scope="col">ownerId</th>
-					<th scope="col">location</th>
-					<th scope="col">contactNumber</th>
-					<th scope="col">address</th>
-					<th scope="col">assetdate</th>
-					<th scope="col">status</th>
-					<th scope="col">price</th>
-					<th scope="col">length</th>
-					<th scope="col">breadth</th>
-					<th scope="col">squareFeet</th>
-					<th scope="col">surveyNumber</th>
-					<th scope="col">pattaNumber</th>
-					<th scope="col">approvedType</th>
-					<th scope="col">facing</th>
-					<th scope="col">assestType</th>
+					<th scope="col">AssetId</th>
+					<th scope="col">UserId</th>
+					<th scope="col">Location</th>
+					<th scope="col">ContactNumber</th>
+					<th scope="col">Address</th>
+					<th scope="col">AssetDate</th>
+					<th scope="col">Status</th>
+					<th scope="col">Price</th>
+					<th scope="col">Length</th>
+					<th scope="col">Breadth</th>
+					<th scope="col">SquareFeet</th>
+					<th scope="col">SurveyNumber</th>
+					<th scope="col">PattaNumber</th>
+					<th scope="col">ApprovedType</th>
+					<th scope="col">Facing</th>
+					<th scope="col">AssestType</th>
 					<th scope="col">Asset</th>
-					<th scope="col">user</th>
-					<th scope="col">PG</th>
-					<th scope="col">Appartment</th>
-					<th scope="col">Payment</th>
+					
 				</tr>
 			</thead>
 			<tbody>

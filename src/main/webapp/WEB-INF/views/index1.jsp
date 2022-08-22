@@ -55,7 +55,7 @@
   .dropdown-2 a{
     float: none;
     color: black;
-    padding: 5px 10px;
+    padding: 2px 10px;
     text-decoration: none;
     display: block;
     text-align: left;
@@ -83,7 +83,7 @@
     border: none;
     outline: none;
     color: white;
-    padding: 14px 16px;
+    padding: 12px 16px;
     background-color: inherit;
     font-family: inherit;
     margin: 0;
