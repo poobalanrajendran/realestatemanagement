@@ -11,7 +11,7 @@ Payments findById(long id);
 Payments save(Payments payment);
 void deleteById(long id);
 List<Payments> findAll();
-Payments findByid(int id);
+
 List<Payments> findByBuyerAssestid(int buyerAssestid);
 
 }
