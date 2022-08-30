@@ -15,6 +15,7 @@
     </style>
 </head>
 <body>
+<button class="button" onclick="history.back()">Go Back</button>
 <br>
 <h1>Transaction</h1>
 <div>

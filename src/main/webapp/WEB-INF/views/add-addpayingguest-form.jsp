@@ -20,6 +20,7 @@ function display()
 
 </script>
 <body>
+<button class="button" onclick="history.back()">Go Back</button>
 <div class="container">
 
 <form:form action="addpguest" method="post" modelAttribute="addpg">
@@ -33,7 +34,7 @@ function display()
        </div>
       </div>
       <br>
-     <div class="row">
+    <%--  <div class="row">
                 <div class="col-25">
        <label for="rent">Rent cost</label>
        </div>
@@ -41,7 +42,7 @@ function display()
         <form:input path="rent" required ="true" pattern="[0-9]{4}" title="Enter the integer only"/>
        </div>
       </div>
-      <br>
+      <br> --%>
        <div class="row">
                 PG Type : <form:radiobutton path="pgType" value="Mens Hostel" required ="true"/>Mens Hostel
                          <form:radiobutton path="pgType" value="WomenMens Hostel" required ="true"/> WomenMens Hostel

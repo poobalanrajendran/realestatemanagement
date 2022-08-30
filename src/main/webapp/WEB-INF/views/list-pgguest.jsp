@@ -15,7 +15,7 @@
 <thead>
 <tr>
 <th scope="col">pgId</th>
-<th scope="col">rent</th>
+<!-- <th scope="col">rent</th> -->
 <th scope="col">foodFacility</th>
 <th scope="col">acNonac</th>
 <th scope="col">advance</th>
@@ -28,7 +28,7 @@
 <c:forEach var="pg" items="${allpg}"> 
 <tr>
 <td>${pg.pgId}</td>
-<td>${pg.rent}</td>
+<%-- <td>${pg.rent}</td> --%>
 <td>${pg.foodFacility}</td>
 <td>${pg.acNonac}</td>
 <td>${pg.advance}</td>

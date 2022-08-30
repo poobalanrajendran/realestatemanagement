@@ -14,6 +14,8 @@
 
 </head>
 <body>
+<button class="button" onclick="history.back()">Go Back</button>
+
 <div class="container">
 
 			<form:form action="addpaymentform" method="post"
@@ -21,10 +23,10 @@
 				<h1>Payment Details</h1>
 				<div class="row">
                 <div class="col-25">
-					<label for="invoice">Invoice Id</label>
+					<!-- <label for="invoice">Invoice Id</label> -->
 					</div>
 					<div class="col-75">
-						<form:input path="invoice" pattern="[0-9]{6}" required="true" title="Enter the integer only"/>
+						<form:hidden path="invoice" pattern="[0-9]{6}" required="true" title="Enter the integer only"/>
 					</div>
 				</div>
 				<br>

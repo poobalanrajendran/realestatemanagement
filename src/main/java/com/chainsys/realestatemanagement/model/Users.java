@@ -7,13 +7,19 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 @Entity
 @Table(name="users")
 public class Users {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "users_id")
+    @SequenceGenerator(name = "users_id", sequenceName = "users_id",  allocationSize = 1)
+
 	@Column(name="users_id")
 	private int usersId;	
 	@Column(name="users_name")
@@ -116,7 +122,11 @@ public class Users {
 		this.dates = dates;
 	}
 
-	
-	
+	/*
+	 * @Override public String toString() { System.out.println(
+	 * usersId+"  "+usersName+" "+passwords+" "+roles+" "+gender+" "+emailId+" "
+	 * +address+" "+phoneno); return String.format("%d, %s, %s, %s, %s, %s, %s,%d,"
+	 * , usersId,usersName,passwords,roles,gender,emailId,address,phoneno); }
+	 */
 	
 }

@@ -6,6 +6,9 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -36,9 +39,14 @@ public class AssestController {
 	public static String uploadDir = System.getProperty("user.dir") + "/src/main/resources/Images";
 
 	@GetMapping("/addform")
-	public String showAddForm(Model model) {
+	public String showAddForm(Model model, HttpServletRequest request) {
 		Assest theAssest = new Assest();
 		model.addAttribute("addassest", theAssest);
+		
+		HttpSession session= request.getSession();
+		int userId=(int)session.getAttribute("userId");
+		theAssest.setUsersId(userId);//.setBuyerAssestid(userId);
+		
 		return "add-addland-form";
 	}
 
@@ -109,6 +117,7 @@ public class AssestController {
 		}
 
 		return "redirect:/assest/getAllAsset";
+		//return "redirect:/assest/userid";
 	}
 
 	@GetMapping("/findusersbyid")
@@ -122,7 +131,7 @@ public class AssestController {
 
 	public String getAllassest(Model model) {
 		List<Assest> landlist = assestService.getAssest();
-		model.addAttribute("alllands", landlist);
+		model.addAttribute("alldata", landlist);
 		return "list-land";
 	}
 

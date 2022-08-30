@@ -13,8 +13,9 @@ public class PayingGuest {
 	@Column(name="pg_id")
 	private int pgId;
 	
-	@Column(name="rent")
-	private String rent;
+	/*
+	 * @Column(name="rent") private String rent;
+	 */
 	
 	@Column(name="foodfacility")
 	private String foodFacility;
@@ -43,13 +44,11 @@ public class PayingGuest {
 		this.pgId = pgId;
 	}
 
-	public String getRent() {
-		return rent;
-	}
-
-	public void setRent(String rent) {
-		this.rent = rent;
-	}
+	/*
+	 * public String getRent() { return rent; }
+	 * 
+	 * public void setRent(String rent) { this.rent = rent; }
+	 */
 
 	public String getFoodFacility() {
 		return foodFacility;

@@ -12,6 +12,8 @@
 </style>
 </head>
 <body>
+<button class="button" onclick="history.back()">Go Back</button>
+
       <div class="container"> 
 				<form:form action="updateuser" method="post"
 					modelAttribute="updateuser">

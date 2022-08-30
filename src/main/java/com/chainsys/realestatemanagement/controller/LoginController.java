@@ -1,5 +1,7 @@
 package com.chainsys.realestatemanagement.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.chainsys.realestatemanagement.model.Login;
 import com.chainsys.realestatemanagement.model.Users;
 import com.chainsys.realestatemanagement.service.UserService;
+import com.chainsys.realestatemanagement.validation.InvalidInputDataException;
 
 @Controller
 @RequestMapping("/home")
@@ -26,8 +29,22 @@ public class  LoginController {
     }
     
     @PostMapping("/userpage")
-    public String userPage(@ModelAttribute("signIn") Login login, Model model) {
+    public String userPage(@ModelAttribute("signIn") Login login,  Model model,HttpSession session) {
+    	
+    	
+			/*login Exception*/
     	 Users userdetails =  userservice.findByEmailId(login.getEmailId());
+    	        try {
+    	            if(userdetails==null)
+    	                throw new InvalidInputDataException("There is no Matching data");
+    	    } 
+    	        catch (InvalidInputDataException exp) {
+    	        model.addAttribute("error", "Error Name:" + exp.getMessage());
+    	        model.addAttribute("message", "Email or password Mismatch");
+    	        return "/login";
+    	    }
+    	        session.setAttribute("userId", userdetails.getUsersId());
+				/*login*/	 
         if (userdetails.getEmailId().equals(login.getEmailId()))
         {
        if (userdetails.getPasswords().equals(login.getPasswords()))
@@ -56,8 +73,9 @@ public class  LoginController {
     @GetMapping("/page")
     public String homepage(Model model)
     {
-    	Login login = new Login();
-        model.addAttribute("space",login);
+		/*
+		 * Login login = new Login(); model.addAttribute("space",login);
+		 */
     	return"index1";
     }
     @GetMapping("/about")
@@ -66,5 +84,4 @@ public class  LoginController {
     	return "about";
     }
     
-	
     }

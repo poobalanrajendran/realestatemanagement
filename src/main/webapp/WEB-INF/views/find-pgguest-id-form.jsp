@@ -19,12 +19,12 @@
        </div>
       </div>
       <br>
-      <div>
+      <%-- <div>
        <label for="rent">Rent cost</label>
        <div >
         <form:input path="rent"  />
        </div>
-      </div>
+      </div> --%>
       <br>
        <div>
                 PG Type : <form:radiobutton path="pgType" value="Mens Hostel" />Mens Hostel
@@ -66,13 +66,14 @@
        <div >
         <form:input path ="floor"/>
        </div>
-      </div>
+      
   <br>
        
       
 
-</div>
+
 </form:form>
+</div>
 </div>
 </body>
 </html>

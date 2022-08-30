@@ -19,6 +19,7 @@ function display()
 	}
 </script>
 <body>
+<button class="button" onclick="history.back()">Go Back</button>
 <div class="container">
 	<div id="root">
 		<div id="form">

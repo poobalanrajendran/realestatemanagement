@@ -2,6 +2,9 @@ package com.chainsys.realestatemanagement.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,11 +28,14 @@ public class PaymentsController {
 	AssestService assestService;
 	
 	@GetMapping("/paymentform")
-	public String showAddForm(Model model)
+	public String showAddForm(@RequestParam("assId")int assId,HttpServletRequest request, Model model)
 	{
 		Payments payAmount =new Payments();
 		model.addAttribute("addpay",payAmount);
-		
+		HttpSession session= request.getSession();
+		int userId=(int)session.getAttribute("userId");
+		payAmount.setBuyerAssestid(userId);
+		payAmount.setId(assId);
 		return "add-addpayment-form";
 	}
 	

@@ -25,10 +25,10 @@
             </div>
             <div class="content">
                <h1>Payment Success !</h1>
-                <p>We have received your payment!<br>Thank you for being a valued Student of Madurai Government Arts College;<br/> we'll be in touch shortly!</p>
+                <p>We have received your payment!<br>congratulations<br/> Visit Again!</p>
        
-               <a href="/home/page">Go to Home</a>
-               <!-- <a href="/user/addform">Login In</a> -->
+               <a href="/home/signin">Go to Home</a>
+
             </div>
             
          </div>

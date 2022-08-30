@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.chainsys.realestatemanagement.dto.UsersAndAssetDTO;
 import com.chainsys.realestatemanagement.model.Users;
 import com.chainsys.realestatemanagement.service.UserService;
+import com.chainsys.realestatemanagement.validation.InvalidInputDataException;
 
 @Controller
 @RequestMapping("/users")
@@ -31,9 +32,39 @@ public class UsersController {
 
 	@PostMapping("/addusers")
 
-	public String addNewUser(@ModelAttribute("adduser") Users theuser) {
+	public String addNewUser(@ModelAttribute("adduser") Users theuser, Model model) {
+		Users pass=userService.getByPasswords(theuser.getPasswords());
+		try
+		{
+			if(pass!=null)
+			{
+				throw new InvalidInputDataException("Already exit");
+			}
+		}
+		catch(InvalidInputDataException e)
+		{
+			model.addAttribute("error","Error Name:" + e.getMessage());
+			model.addAttribute("message", "Password is already exit");
+			return "add-adduser-form";
+		}
+		/*EmailException*/
+		Users useremail=userService.findByEmailId(theuser.getEmailId());
+   	 
+   	 try
+   	 {
+   		 if(useremail!=null) {
+   		throw new InvalidInputDataException("Already exit");
+   	 }}
+   	 catch(InvalidInputDataException ex)
+   	 {
+   		 model.addAttribute("error", "Error Name:" + ex.getMessage());
+   		 model.addAttribute("message","Email is already exit");
+   		 return "add-adduser-form";
+   	 }
+   	
+		
 		userService.save(theuser);
-		return "redirect:/users/userslist";
+		return "login";
 	}
 
 	@GetMapping("/updateform")
@@ -46,6 +77,7 @@ public class UsersController {
 
 	@PostMapping("/updateuser")
 	public String updateuser(@ModelAttribute("updateuser") Users userid) {
+		
 		userService.save(userid);
 		
 		return "update-users-form";

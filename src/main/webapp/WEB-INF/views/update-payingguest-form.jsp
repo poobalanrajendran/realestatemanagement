@@ -19,12 +19,12 @@
        </div>
       </div>
       <br>
-      <div>
+      <%-- <div>
        <label for="rent">Rent cost</label>
        <div >
         <form:input path="rent" required ="true" title="Enter the integer only"/>
        </div>
-      </div>
+      </div> --%>
       <br>
        <div>
                 PG Type : <form:radiobutton path="pgType" value="Mens Hostel" />Mens Hostel

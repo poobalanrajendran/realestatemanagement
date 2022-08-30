@@ -31,7 +31,12 @@ public class UserService {
 		
 		return userrepo.findByUsersName(userName);
 	}
-		
+	
+	public Users getByPasswords(String passwords)
+	{
+		return userrepo.findByPasswords(passwords);
+	}
+	
 	public Users save(Users user)
 	{
 		return userrepo.save(user);

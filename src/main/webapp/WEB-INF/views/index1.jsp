@@ -138,7 +138,7 @@
 
   <script>
     function displayDetails(location){
-    	 alert("assest");
+  
      	window.location.href="/assest/location?location="+location;
      }
     function displayUser(usersId)
@@ -157,7 +157,7 @@
       </div>
       <div class="header dropdown-0">
           <div class="dropbtn-1">
-            Assest
+            Asset
           </div>
           <div class="dropdown-2">
             <div class="buyer">
@@ -185,9 +185,9 @@
      <div class="header">
       <a href="/home/about">About</a> 
       </div>
-      <div class="header">
+      <!-- <div class="header">
         <a href="">Contact</a>
-      </div>
+      </div> -->
       <div class="header dropdown-0">
 
          <div class="dropbtn-1">

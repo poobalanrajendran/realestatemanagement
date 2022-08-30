@@ -73,7 +73,7 @@ label {
     border: none;
     border-radius: 10px;
     box-shadow: 0 9px #1E90FF;
-    margin-left: 190px;
+    margin-left: 142px;
     margin-top: 10px;
 }
 
@@ -85,4 +85,16 @@ label {
     background-color: #9932CC;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
+}
+.button {
+    border: none;
+    background-color: #1877f2;
+    color: white;
+    margin-left: 0px;
+    width: 100px;
+    display: block;
+    border-radius: 5px;
+    padding: 10px 0;
+    font-weight: bold;
+    cursor: pointer;
 }

@@ -34,7 +34,7 @@ public class AppartmentsController {
 	public String addNewappart(@ModelAttribute("addapparts") Appartments theappart)
 	{
 		appartmentsService.save(theappart);
-		return"index1";
+		return "redirect:/assest/landlist";
 }
 @GetMapping("/updateform")
 public String updateapparts(@RequestParam("id") int id, Model model)

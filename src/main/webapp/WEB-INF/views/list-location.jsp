@@ -26,28 +26,30 @@ th:nth-child(even),td:nth-child(even) {
 </style>
 </head>
 <body>
+<button class="button" onclick="history.back()">Go Back</button>
+
 	<table id="alter" class="center"><caption></caption>
 			<thead>
 				<tr>
-					<th>id</th>
+					<th>AssetId</th>
 					
 					<th>UserId</th>
 					
-					<th>location</th>
-					<th>contactNumber</th>
-					<th>address</th>
-					<th>assetdate</th>
-					<th>status</th>
-					<th>price</th>
-					<th>length</th>
-					<th>breadth</th>
+					<th>Location</th>
+					<th>ContactNumber</th>
+					<th>Address</th>
+					<th>AssetDate</th>
+					<th>AssetStatus</th>
+					<th>Price</th>
+					<th>AssetLength</th>
+					<th>AssetBreadth</th>
 					<th>squareFeet</th>
-					<th>surveyNumber</th>
-					<th>pattaNumber</th>
-					<th>approvedType</th>
-					<th>facing</th>
+					<th>AssetSurveyNumber</th>
+					<th>AssetPattaNumber</th>
+					<th>AssetApprovedType</th>
+					<th>AssetFacing</th>
 					<th>assestType</th>
-					<th>image</th>
+					<th>AssetImage</th>
 					<th>Register</th>
 				</tr>
 			</thead>
@@ -55,7 +57,7 @@ th:nth-child(even),td:nth-child(even) {
 				<c:forEach var="lan" items="${allproperty}">
 					<tr>
 						<td>${lan.id}</td>
-												<td>${lan.usersId}</td>
+					    <td>${lan.usersId}</td>
 						<td>${lan.location}</td>
 						<td>${lan.contactNumber}</td>
 						<td>${lan.address}</td>
@@ -75,10 +77,17 @@ th:nth-child(even),td:nth-child(even) {
                             alt="image" width="100" height="100"></td>
 						
 						
-						<td><button ${lan.status eq 'Sold'  ? 'disabled="disabled"' : ''}  class ="btn" onclick="window.location.href='/payment/paymentform'">Buy</button></td>
-				</tr>
+					<%--<td><button ${lan.status eq 'Sold'  ? 'disabled="disabled"' : ''}  class ="btn" onclick="window.location.href='/payment/paymentform'">Buy</button></td> --%>
+				<td><button ${lan.status eq 'Sold'  ? 'disabled="disabled"' : ''} onclick="showPayment(${lan.id})">Buy</button></a></td>
+				 </tr>
 				</c:forEach>
 			</tbody>
 		</table>
-</body>
+</body> 
+<script>
+  function showPayment(assetId)
+    {
+    	window.location.href="/payment/paymentform?assId="+assetId;
+    }
+  </script>
 </html>

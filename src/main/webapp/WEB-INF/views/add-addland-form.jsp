@@ -14,6 +14,11 @@
 		var squarefeet = parseFloat(a) * parseFloat(b);
 		document.getElementById('squareFeet').value = squarefeet;
 	}
+	
+	function view()
+	{
+		alert(" Sucessfully Added");
+		}
 </script>
 <style>
 /* .container {
@@ -54,8 +59,11 @@
 } */
 <%@include file="css/asset.css"%>
 </style>
+
+
 </head>
 <body>
+<button class="button" onclick="history.back()">Go Back</button>
 	<div class="container">
 
 		<form:form action="/assest/addasset" method="post"
@@ -63,10 +71,10 @@
 			<h1>Asset Form</h1>
 			<div class="row">
 				<div class="col-25">
-					<label for="id">Asset Id</label>
+					<!-- <label for="id">Asset Id</label> -->
 				</div>
 				<div class="col-75">
-					<form:input path="id" title="Asset ID only Contains 4 Numbers"
+					<form:hidden path="id" title="Asset ID only Contains 4 Numbers"
 						pattern="[0-9]{4}" required="true" />
 				</div>
 			</div>
@@ -96,7 +104,7 @@
 
 			<div class="row">
 				<div class="col-25">
-					<label for="length">LandLength </label>
+					<label for="length">AssetLength </label>
 				</div>
 				<div class="col-75">
 					<form:input path="length" id="length" title="enter only two digit"
@@ -108,7 +116,7 @@
 
 			<div class="row">
 				<div class="col-25">
-					<label for="breadth">LandBreadth</label>
+					<label for="breadth">AssetBreadth</label>
 				</div>
 				<div class="col-75">
 					<form:input path="breadth" id="breadth"
@@ -120,7 +128,7 @@
 			<br>
 			<div class="row">
 				<div class="col-25">
-					<label for="squareFeet">LandSquarefeet </label>
+					<label for="squareFeet">AssetSquarefeet </label>
 				</div>
 				<div class="col-75">
 					<form:input path="squareFeet" id="squareFeet"
@@ -132,7 +140,7 @@
 
 			<div class="row">
 				<div class="col-25">
-					<label for="surveyNumber">LandSurveyno</label>
+					<label for="surveyNumber">AssetSurveyno</label>
 				</div>
 				<div class="col-75">
 					<form:input path="surveyNumber"
@@ -144,7 +152,7 @@
 
 			<div class="row">
 				<div class="col-25">
-					<label for="pattaNumber">LandPattano</label>
+					<label for="pattaNumber">AssetPattano</label>
 				</div>
 				<div class="col-75">
 					<form:input path="pattaNumber"
@@ -241,7 +249,7 @@
 				</div>
 				<div class="col-75">
 					<form:input path="price" title="Name can't be less than 5 to 7"
-						pattern="[0-9]{5,7}" required="true" />
+						pattern="[0-9]{4,7}" required="true" />
 				</div>
 			</div>
 			<br>
@@ -255,16 +263,16 @@
 			</div>
 			<br>
 			<div class="col-sm-5">
-				<p>Product Image</p>
+				<p>Asset Image</p>
 				<div class="custom-file">
 					<input type="file" class="custom-file-input" name="assetImage"
 						accept="image/jpeg, image/png ,image/jpg" id="assetImage" /> <label
-						class="custom-file-label" for=assetImage>Choosefile</label>
+						class="custom-file-label" for=assetImage></label>
 				</div>
 			</div>
 			<input type="hidden" name="imgName" value="asset.image">
 			<div class="row">
-				<form:button class="btn">Add</form:button>
+				<form:button class="btn" onclick="view()">Add</form:button>
 			</div>
 		</form:form>
 	</div>

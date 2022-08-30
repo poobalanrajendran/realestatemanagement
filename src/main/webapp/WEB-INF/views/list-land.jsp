@@ -13,6 +13,7 @@
 </style>
 </head>
 <body>
+<button class="button" onclick="history.back()">Go Back</button>
 <br>
 <h1>Asset</h1>
 <br>

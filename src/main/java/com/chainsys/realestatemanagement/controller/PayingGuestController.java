@@ -33,7 +33,7 @@ public class PayingGuestController {
 	public String addNewappart(@ModelAttribute("addpg") PayingGuest thepgguest) {
 		payingguestService.save(thepgguest);
 		
-		return "index1";
+		return "redirect:/assest/landlist";
 	}
 
 	@GetMapping("/updateform")

@@ -18,5 +18,6 @@ public interface UsersRepository extends CrudRepository<Users,Integer> {
 	void deleteById(int id);
 	List<Users> findAll();
 	Users findByUsersName(String usersName);
+	Users findByPasswords(String passwords);
 
 }

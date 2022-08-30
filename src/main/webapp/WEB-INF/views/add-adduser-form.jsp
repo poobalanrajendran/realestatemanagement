@@ -2,6 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import="com.chainsys.realestatemanagement.businesslogic.Logic"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,8 +11,11 @@
 <style>
 <%@include file="css/adduser.css"%>
 </style>
+
 </head>
 <body>
+<button class="button" onclick="history.back()">Go Back</button>
+
 	<div class="container"> 
 
 				<form:form action="/users/addusers" method="post"
@@ -19,10 +23,10 @@
 					<h1>Add User Form</h1>
 					 <div class="row">
                 <div class="col-25">
-						<label for="usersId" class="font" >User Id</label>
+						<!-- <label for="usersId" class="font" >User Id</label> -->
 						</div>
 						    <div class="col-75">
-							<form:input  path="usersId" required="true" placeholder="enter user Id" pattern="[0-9]{4}" title="user Id only contains Numbers" />
+							<form:hidden  path="usersId"  placeholder="enter user Id" pattern="[0-9]{4}" title="user Id only contains Numbers" />
 						</div>
 					</div>
 					
@@ -101,7 +105,7 @@
 				</div>
 				
 				<div class="col-75">
-					<form:input type="date" path="Dates" />
+					<form:input path="Dates" value="<%=Logic.getInstanceDate()%>" readonly="true" required="true" />
 				</div>
 			</div>
 			
@@ -120,6 +124,8 @@
 			<div class="row">
             <form:button class="btn">User</form:button>
             </div>
+            <br>
+            <div class="error">${message}</div>
 		</form:form>
 	</div>
 	

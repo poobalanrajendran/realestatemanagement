@@ -5,9 +5,8 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
+ <%--  <head>
 <title>Login App</title>
-<link rel="stylesheet" type="text/css" href="jslogin.css">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta content="IE=edge" http-equiv="X-UA-Compatible">
 <meta name="x-apple-disable-message-reformatting">
@@ -193,6 +192,7 @@ button {
 		<div class="bg"></div>
 
 		<form action="/home/userpage" method="post" modelAttribute="signIn">
+		
 			<header>
 				<img
 					src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVYq5SvPw9gYATcRgyhZWVpqHltZL29dydAg&usqp=CAU" alt="">
@@ -212,7 +212,8 @@ button {
 			<br>
 			
 			<button>Login</button>
-		
+		<div>${message}
+</div>
 		</form>
 
 		<footer>
@@ -224,5 +225,44 @@ button {
 
 
 	</div>
+	
 </body>
-</html>
+   --%>
+ 
+ 
+     <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    <%@include file="css/Login.css"%>
+    
+    </style>
+<body>
+		
+ 
+     <form action="/home/userpage" method="post" modelAttribute="signIn" style="display: inline-flex; margin-top: 74px;">
+        <img src="https://5.imimg.com/data5/OU/ED/MY-44651033/paying-guest-renting-solutions-500x500.jpg" class="cs-image">
+        <div class="container" style="width: 318px;">
+            <h2>Login</h2>
+            <hr>
+            <div class="email">
+                <input type="email" name="emailId" id="emailId" placeholder="Enter Email " required autocomplete="off"
+                    autofocus> <br>
+            </div>
+            <div class="password">
+                <input type="password" name="passwords" id="passwords" placeholder="Enter Password " required
+                    autocomplete="off" autofocus> <br>
+            </div>
+            <button class="login-button" type="submit" >Submit</button>
+            <div class="new-user">
+                <h4>New User ? <a  href="/users/usersform">Click Here</a></h4>
+            </div>
+        </div>
+    </form>
+    </form>
+</body>   
+ 
+ 
+ </html>
